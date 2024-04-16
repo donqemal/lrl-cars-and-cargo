@@ -1,0 +1,262 @@
+.welcome-container {
+  margin-top: 90px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  video {
+    width: 100%;
+  }
+
+  h1 {
+    font-family: Lato-Black, sans-serif;
+    font-size: 60px;
+    font-weight: bolder;
+    position: absolute;
+    filter: brightness(0) invert(1);
+  }
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  max-width: 750px;
+  margin: 20px auto 0;
+  background-color: #a9a9a9;
+  border-radius: 10px;
+}
+
+.service {
+  padding-top: 10px;
+  max-width: 200px;
+  text-align: center;
+
+  img {
+    height: 80px;
+    display: block;
+    margin: auto;
+  }
+
+  h4 {
+    color: white;
+  }
+
+  p {
+    width: 80%;
+    margin: 0 auto 10px;
+    color: white;
+    font-size: 14px;
+  }
+}
+
+.car-banner-container {
+  width: 100%;
+  background-color: #3a3a3a;
+  margin-top: 20px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 280px;
+    border-radius: 10px;
+    margin-left: 30px;
+  }
+
+  .content {
+    margin-left: 30px;
+    margin-right: 30px;
+
+    h2 {
+      font-size: 26px;
+      color: white;
+      font-family: Lato-Black, sans-serif;
+    }
+
+    p {
+      font-size: 18px;
+      color: lightgrey;
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.rl-services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto auto;
+  background-color: #b2b0b0;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  padding-bottom: 45px;
+
+  .content {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  img {
+    height: 150px;
+  }
+
+  h2 {
+    color: #4f4b4b;
+    font-size: 24px;
+    margin: 0 0 15px;
+    font-family: Lato-Black, sans-serif;
+  }
+
+  li {
+    color: white;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+}
+
+.swipe-images-container {
+  background-color: #3b3b3c;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  h4 {
+    padding-top: 30px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    width: 90%;
+  }
+
+  swiper-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+}
+
+.brands-container {
+  background-color: #bf0202;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  img {
+    max-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header img {
+    height: 70px;
+  }
+
+  .welcome-container {
+    h1 {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+
+  .services-container {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+
+    .service {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: none;
+      margin-bottom: 20px;
+    }
+  }
+
+  .car-banner-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      margin: 0;
+      width: 90%;
+    }
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .rl-services-container {
+    max-width: 90%;
+
+    h2 {
+      text-align: center;
+      width: 90%;
+      margin: auto auto 10px;
+    }
+
+    li {
+      margin-left: 20px;
+    }
+
+    img {
+      height: 80px;
+    }
+  }
+
+  .swipe-images-container {
+    swiper-container {
+      width: 80%;
+    }
+  }
+
+  .brands-container {
+    gap: 30px;
+
+    img {
+      height: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .service img {
+    height: 60px;
+  }
+
+  .car-banner-container {
+    img {
+      margin: 0;
+      max-height: 200px;
+    }
+
+    .content {
+      margin-top: 10px;
+    }
+  }
+}

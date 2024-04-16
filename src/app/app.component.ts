@@ -1,25 +1,23 @@
-import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterOutlet} from '@angular/router';
-
+import {RouterLink, RouterOutlet} from '@angular/router';
+import {FormsModule} from "@angular/forms";
+import {MatButtonToggle} from "@angular/material/button-toggle";
+import {MatAnchor, MatButton, MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
+import {HomeComponent} from "./home/home.component";
+import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
+import {NavigationComponent} from "./navigation/navigation.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FormsModule, MatButtonToggle, MatButton, MatIcon, HomeComponent, RouterLink, MatMenuTrigger, MatMenu, MatMenuItem, MatIconButton, MatAnchor, NavigationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
-  title = 'LRL-CarsAndCargo';
-  services: any = [
-    {id: 1, description: 'Verkauf'},
-    {id: 2, description: 'Ankauf'},
-    {id: 3, description: 'Transport'},
-    {id: 4, description: 'Support'},
-  ];
-
-  cars: string[] = ['carousel-car1', 'carousel-car2', 'carousel-car3'];
-  brands: string[] = ['audi', 'alfa-romeo', 'bmw', 'mercedes', 'vw', 'renault'];
+  contactLRLPerWhatsapp() {
+    window.open('https://wa.me/41766291070');
+  }
 }
