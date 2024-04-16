@@ -19,7 +19,7 @@ export class HomeComponent {
     {id: 4, description: 'Support'},
   ];
 
-  cars: string[] = ['carousel-car1', 'carousel-car2', 'carousel-car3'];
+  cars: string[] = ['carousel-car1', 'carousel-car2', 'carousel-car3', 'carousel-car4', 'carousel-car5'];
 
   brands: string[] = ['audi', 'alfa-romeo', 'bmw', 'mercedes', 'vw', 'renault'];
 }
