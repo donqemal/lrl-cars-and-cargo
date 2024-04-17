@@ -1,0 +1,14 @@
+<form [formGroup]="carForm" novalidate>
+  <div *ngFor="let control of carForm.controls | keyvalue" class="container">
+    <div *ngIf="carForm.get(control.key)?.errors?.['required']">
+      <div class="error-message">
+        {{ carForm.get(control.key)?.errors?.['required'].message }}
+      </div>
+    </div>
+    <textarea *ngIf="control.key === 'Bemerkungen'" [formControlName]="control.key" [placeholder]="control.key" class="remarks"></textarea>
+    <input *ngIf="control.key !== 'Bemerkungen'" [formControlName]="control.key" [placeholder]="control.key">
+  </div>
+  <div class="submit">
+    <button type="submit" (click)="submit(carForm)">Senden</button>
+  </div>
+</form>

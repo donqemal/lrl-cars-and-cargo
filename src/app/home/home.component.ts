@@ -1,5 +1,6 @@
 import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,15 @@ export class HomeComponent {
     {id: 4, description: 'Support'},
   ];
 
+  constructor(private router: Router) {
+  }
+
+
   cars: string[] = ['carousel-car1', 'carousel-car2', 'carousel-car3', 'carousel-car4', 'carousel-car5'];
 
   brands: string[] = ['audi', 'alfa-romeo', 'bmw', 'mercedes', 'vw', 'renault'];
+
+  navigatePage(page: string) {
+    this.router.navigate([page]);
+  }
 }

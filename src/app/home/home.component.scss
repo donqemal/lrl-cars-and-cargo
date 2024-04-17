@@ -39,6 +39,12 @@
     left: 20px;
     width: 230px;
     height: 60px;
+    transition: 0.3s;
+  }
+
+  .buy-car:hover {
+    background-color: #ff0000;
+    transition: 0.3s;
   }
 
   .sell-car {
@@ -54,6 +60,12 @@
     right: 20px;
     width: 230px;
     height: 60px;
+    transition: 0.3s;
+  }
+
+  .sell-car:hover {
+    background-color: #cbcbcb;
+    transition: 0.3s;
   }
 }
 

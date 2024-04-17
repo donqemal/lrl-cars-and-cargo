@@ -1,0 +1,60 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 150px;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+.error-message {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+
+textarea, input {
+  width: 80%;
+  font-family: Lato-Regular, sans-serif;
+  font-size: 24px;
+  border-radius: 10px;
+  border: 3px solid #bf0202;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin: auto auto 50px;
+}
+
+.remarks {
+  height: 200px;
+  resize: none;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+button {
+  font-family: Lato-Black, sans-serif;
+  background-color: #bf0202;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 26px;
+  cursor: pointer;
+  width: 230px;
+  height: 60px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff0000;
+  transition: 0.3s;
+}
