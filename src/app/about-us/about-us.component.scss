@@ -1,0 +1,24 @@
+h1 {
+  padding-top: 150px;
+  text-align: center;
+  font-family: Lato-Black, sans-serif;
+  font-size: 26px;
+}
+
+.about-us-mobile {
+  width: 100vw;
+  margin-top: 15px;
+}
+
+.about-us {
+  display: flex;
+  width: 75vw;
+  margin: 35px auto auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    padding-top: 100px;
+  }
+}
