@@ -1,58 +1,97 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Component} from '@angular/core';
+import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {KeyValuePipe, NgForOf, NgIf} from "@angular/common";
+import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
+import {ToastrService} from "ngx-toastr";
+import {MatIcon} from "@angular/material/icon";
+import {FooterComponent} from "../footer/footer.component";
+
+export type Car = {
+  marke: string;
+  modell: string;
+  erstzulassung: string;
+  kilometerstand: number;
+  zustand: string;
+  kraftstoffart: string;
+  getriebe: string;
+  email: string;
+  bemerkungen: string;
+}
 
 @Component({
   selector: 'app-sell',
   standalone: true,
   imports: [
-    ReactiveFormsModule,
     KeyValuePipe,
     NgForOf,
-    NgIf
+    NgIf,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatIcon,
+    FooterComponent
   ],
   templateUrl: './sell.component.html',
   styleUrl: './sell.component.scss'
 })
-export class SellComponent implements OnInit {
-  carForm!: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
+export class SellComponent {
+  constructor(private http: HttpClient, private fb: FormBuilder, private toast: ToastrService) {
   }
 
-  ngOnInit(): void {
-    this.carForm = this.formBuilder.group({
-      Bemerkungen: [''],
-      Email: ['', [Validators.required, Validators.email]],
-      Getriebe: ['', Validators.required],
-      Kraftstoff: ['', Validators.required],
-      Fahrzeugzustand: ['', Validators.required],
-      Kilometerstand: ['', Validators.required],
-      Erstzulassung: ['', Validators.required],
-      Modell: ['', Validators.required],
-      Marke: ['', Validators.required],
-    });
-  }
+  carForm = this.fb.group({
+    marke: ['', Validators.required],
+    modell: ['', Validators.required],
+    erstzulassung: ['', Validators.required],
+    kilometerstand: [null, Validators.required],
+    zustand: ['', Validators.required],
+    kraftstoffart: ['', Validators.required],
+    getriebe: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
+    bemerkungen: [''],
+  });
 
-  submit(carForm: FormGroup) {
-    const missingFields: string[] = [];
 
-    for (const key in carForm.controls) {
-      const control = carForm.controls[key];
+  sendMail(
+    marke: string,
+    modell: string,
+    jahrgang: string,
+    kilometerstand: string,
+    zustand: string,
+    kraftstoffart: string,
+    getriebe: string,
+    email: string,
+    preisvorstellung: string,
+    bemerkungen: string,
+  ) {
+    let url = "https://formspree.io/f/mleqagyd";
 
-      if (control.errors?.['required'] && control.value === '') {
-        control.setErrors({required: {message: `${key} ist ein Pflichtfeld`}});
-        missingFields.push(key);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
+      })
+    };
+
+    let data = `
+      Marke=${marke}&
+      Modell=${modell}&
+      Jahrgang=${jahrgang}&
+      Kilometerstand=${kilometerstand}&
+      Zustand=${zustand}&
+      Kraftstoffart=${kraftstoffart}&
+      Getriebe=${getriebe}&
+      Email=${email}&
+      Preisvorstellung=${preisvorstellung}&
+      Bemerkungen=${bemerkungen}`;
+
+    this.http.post<any>(url, data, httpOptions).subscribe({
+      next: () => {
+        this.toast.success('Ihre Anfrage wurde erfolgreich versendet!', undefined, {positionClass: 'toast-top-center'});
+        this.carForm.reset();
+      },
+      error: () => {
+        this.toast.error('Ihre Anfrage konnte nicht versendet werden! Bitte versuchen Sie es erneut', undefined, {positionClass: 'toast-top-center'});
       }
-    }
-
-    if (missingFields.length === 0) {
-      let subject = "Autokauf Anfrage";
-      let body = JSON.stringify(carForm.value);
-      body = body.replace(/[{}"]/g, '');
-      body = body.replace(/,/g, '%0D%0A');
-      window.open(`mailto:lrl@cars-cargo.ch)?subject=${subject}&body=${body}`);
-      this.carForm.reset();
-    }
+    })
   }
 }

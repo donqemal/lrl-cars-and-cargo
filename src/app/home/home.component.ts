@@ -1,12 +1,14 @@
 import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 import {Router} from "@angular/router";
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    MatIcon
+    MatIcon,
+    FooterComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -26,7 +28,7 @@ export class HomeComponent {
 
   cars: string[] = ['carousel-car1', 'carousel-car2', 'carousel-car3', 'carousel-car4', 'carousel-car5'];
 
-  brands: string[] = ['audi', 'alfa-romeo', 'bmw', 'mercedes', 'vw', 'renault'];
+  // brands: string[] = ['audi', 'alfa-romeo', 'bmw', 'mercedes', 'vw', 'renault'];
 
   navigatePage(page: string) {
     this.router.navigate([page]);

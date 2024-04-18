@@ -1,17 +1,17 @@
 <div class="navigation-container">
-  <a routerLink="über-uns">Garantie</a>
   <a routerLink="über-uns">Über uns</a>
-  <a routerLink="kaufen">Kaufen</a>
-  <a routerLink="verkaufen">Verkaufen</a>
+  <a routerLink="fahrzeuge">Fahrzeuge</a>
+  <a routerLink="verkaufen">Auto verkaufen</a>
+  <a routerLink="transport">Cargo Transport</a>
 </div>
 
 <div class="mobile-navigation-container">
   <mat-icon *ngIf="!mobileNavigationVisible" fontIcon="menu" (click)="toggleMobileNavigation()"></mat-icon>
   <mat-icon *ngIf="mobileNavigationVisible" fontIcon="close" (click)="toggleMobileNavigation()"></mat-icon>
   <div *ngIf="mobileNavigationVisible" class="mobile-navigation">
-    <a (click)="navigatePage('/über-uns')">Garantie</a>
     <a (click)="navigatePage('/über-uns')">Über uns</a>
-    <a (click)="navigatePage('/kaufen')">Auto kaufen</a>
+    <a (click)="navigatePage('/fahrzeuge')">Fahrzeuge</a>
     <a (click)="navigatePage('/verkaufen')">Auto verkaufen</a>
+    <a (click)="navigatePage('/transport')">Cargo Transport</a>
   </div>
 </div>

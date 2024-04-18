@@ -1,14 +1,63 @@
-<form [formGroup]="carForm" novalidate>
-  <div *ngFor="let control of carForm.controls | keyvalue" class="container">
-    <div *ngIf="carForm.get(control.key)?.errors?.['required']">
-      <div class="error-message">
-        {{ carForm.get(control.key)?.errors?.['required'].message }}
-      </div>
-    </div>
-    <textarea *ngIf="control.key === 'Bemerkungen'" [formControlName]="control.key" [placeholder]="control.key" class="remarks"></textarea>
-    <input *ngIf="control.key !== 'Bemerkungen'" [formControlName]="control.key" [placeholder]="control.key">
-  </div>
+<h1>Angaben Fahrzeug / Person</h1>
+<form [formGroup]="carForm">
+  <h2>Marke*:</h2>
+  <input #marke placeholder="VW" type="text" required>
+
+  <h2>Modell*:</h2>
+  <input #modell placeholder="Golf" type="text" required>
+
+  <h2>Jahrgang*:</h2>
+  <input #jahrgang placeholder="2012" type="text" required>
+
+  <h2>Kilometerstand*:</h2>
+  <input #kilometerstand placeholder="12'000" type="number" required>
+
+  <h2>Zustand*:</h2>
+  <select #zustand required>
+    <option value="Sehr Gut">Sehr gut</option>
+    <option value="Gut">Gut</option>
+    <option value="Mittelmässig">Mittelmässig</option>
+    <option value="Schlecht">Schlecht</option>
+    <option value="Sehr Schlecht">Sehr schlecht</option>
+  </select>
+
+  <h2>Kraftstoffart*:</h2>
+  <select #kraftstoffart required>
+    <option value="Benzin">Benzin</option>
+    <option value="Diesel">Diesel</option>
+  </select>
+
+  <h2>Getriebe*:</h2>
+  <select #getriebe required>
+    <option value="Automatik">Automatik</option>
+    <option value="Manuell">Manuell</option>
+  </select>
+
+  <h2>Email*:</h2>
+  <input #email placeholder="max.muster@mail.com" type="text" required>
+
+  <h2>Preisvorstellung (in CHF)*:</h2>
+  <input #preisvorstellung placeholder="2000 - 4000" type="text" required>
+
+  <h2>Bemerkungen:</h2>
+  <textarea #bemerkungen placeholder="Bemerkungen" class="remarks" ></textarea>
+
   <div class="submit">
-    <button type="submit" (click)="submit(carForm)">Senden</button>
+    <button (click)="sendMail(
+      marke.value,
+      modell.value,
+      jahrgang.value,
+      kilometerstand.value,
+      zustand.value,
+      kraftstoffart.value,
+      getriebe.value,
+      email.value,
+      preisvorstellung.value,
+      bemerkungen.value
+    )">
+      <mat-icon fontIcon="send" style=""></mat-icon>
+      Senden
+    </button>
   </div>
 </form>
+<app-footer></app-footer>
