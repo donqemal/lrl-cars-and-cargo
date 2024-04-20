@@ -1,0 +1,35 @@
+.swipe-images-container {
+  background-color: #3b3b3c;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  h4 {
+    padding-top: 30px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    width: 90%;
+  }
+
+  swiper-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swipe-images-container {
+    swiper-container {
+      width: 80%;
+    }
+  }
+}

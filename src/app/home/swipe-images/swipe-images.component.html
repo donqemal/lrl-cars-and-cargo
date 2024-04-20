@@ -1,0 +1,11 @@
+<div class="swipe-images-container">
+  <h4>Wir bieten Oldtimer-Autos und modifizierte Rennwagen an, die dazu dienen
+    Ihre Träume und Adrenalinstösse zu verwirklichen.</h4>
+  <swiper-container navigation="true" css-mode="true" pagination="true" spaceBetween="20">
+    @for (car of cars; track car) {
+      <swiper-slide>
+        <img [src]="'assets/' + car + '.png'" alt="car">
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>

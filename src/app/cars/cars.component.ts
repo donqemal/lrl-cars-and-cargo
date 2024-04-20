@@ -6,10 +6,10 @@ import {FooterComponent} from "../footer/footer.component";
   selector: 'app-buy',
   standalone: true,
   imports: [
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './cars.component.html',
-  styleUrl: './cars.component.scss'
+  styleUrl: './cars.component.scss',
 })
 
 export class CarsComponent {

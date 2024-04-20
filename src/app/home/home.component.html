@@ -1,57 +1,7 @@
-<div class="welcome-container">
-  <video autoplay [muted]="true" loop>
-    <source src="./assets/sh-background-video.mp4" type="video/mp4">
-  </video>
-  <h1>Dein Autohändler in Schaffhausen</h1>
-  <div class="cars-container">
-    <button class="buy-car" (click)="navigatePage('/fahrzeuge')">Fahrzeuge</button>
-    <button class="sell-car" (click)="navigatePage('/verkaufen')">Auto Verkaufen</button>
-  </div>
-</div>
-
-<div class="services-container">
-  @for (service of services; track service.id) {
-    <div class="service">
-      <img [src]='"assets/service" + service.id + ".png"' alt="service">
-      <h4>{{ service.description }}</h4>
-      <p>{{ service.text }}</p>
-    </div>
-  }
-</div>
-
-<div class="car-banner-container">
-  <img src="assets/car.jpg" alt="car">
-  <div class="content">
-    <h2>Fahrzeuge nach individuellen Anforderungen</h2>
-    <p>
-      <li>Verkauf von gut gepflegten und maximal erhaltener Occasion-Fahrzeuge</li>
-      <li>Spezifische Anfragen für weltbekannte Marken und Modelle</li>
-    </p>
-  </div>
-</div>
-
-<div class="rl-services-container">
-  <img src="assets/logo.png" alt="logo">
-  <div class="content">
-    <h2>Unsere Cargo-Dienstleistungen bieten Ihnen:</h2>
-    <li>Jahrelange Erfahrung</li>
-    <li>Zuverlässigkeit</li>
-    <li>Moderne Flotte</li>
-    <li>Pünktlichkeit</li>
-    <li>Professionelle Transportlösung</li>
-  </div>
-</div>
-
-<div class="swipe-images-container">
-  <h4>Wir bieten Oldtimer-Autos und modifizierte Rennwagen an, die dazu dienen
-    Ihre Träume und Adrenalinstösse zu verwirklichen.</h4>
-  <swiper-container navigation="true" css-mode="true" pagination="true" spaceBetween="20">
-    @for (car of cars; track car) {
-      <swiper-slide>
-        <img [src]="'assets/' + car + '.png'" alt="car">
-      </swiper-slide>
-    }
-  </swiper-container>
-</div>
+<app-welcome></app-welcome>
+<app-services></app-services>
+<app-car-banner></app-car-banner>
+<app-benefits></app-benefits>
+<app-swipe-images></app-swipe-images>
 
 <app-footer></app-footer>

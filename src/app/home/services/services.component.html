@@ -1,0 +1,9 @@
+<div class="services-container">
+  @for (service of services; track service.id) {
+    <div class="service">
+      <img [src]='"assets/service" + service.id + ".png"' alt="service">
+      <h4>{{ service.description }}</h4>
+      <p>{{ service.text }}</p>
+    </div>
+  }
+</div>
