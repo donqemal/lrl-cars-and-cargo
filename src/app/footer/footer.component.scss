@@ -61,4 +61,13 @@ span:hover {
     max-width: 85%;
     height: 300px;
   }
+
+  .rights-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    gap: 20px;
+  }
 }

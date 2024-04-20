@@ -41,8 +41,19 @@
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
-<footer>
+<footer *ngIf="window.innerWidth > 768">
   &copy; 2024 LRL Cars & Cargo GmbH
   <span> | Datenschutz</span>
   <span> | Impressum</span>
+</footer>
+<footer *ngIf="window.innerWidth <= 768">
+  &copy; 2024 LRL Cars & Cargo GmbH
+  <div class="rights-container">
+    <div class="rights data">
+      Datenschutz
+    </div>
+    <div class="rights impressum">
+      Impressum
+    </div>
+  </div>
 </footer>
