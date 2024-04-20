@@ -1,63 +1,61 @@
 <h1>Angaben Fahrzeug / Person</h1>
-<form [formGroup]="carForm">
-  <h2>Marke*:</h2>
-  <input #marke placeholder="VW" type="text" required>
 
-  <h2>Modell*:</h2>
-  <input #modell placeholder="Golf" type="text" required>
+<form [formGroup]="carForm" class="form-container">
+  <div class="input-group">
+    <h2>Marke*:</h2>
+    <input [(ngModel)]="car.marke" [ngModelOptions]="{standalone: true}" placeholder="VW" type="text" required>
 
-  <h2>Jahrgang*:</h2>
-  <input #jahrgang placeholder="2012" type="text" required>
+    <h2>Modell*:</h2>
+    <input [(ngModel)]="car.modell" [ngModelOptions]="{standalone: true}" placeholder="Golf" type="text" required>
 
-  <h2>Kilometerstand*:</h2>
-  <input #kilometerstand placeholder="12'000" type="number" required>
+    <h2>Jahrgang*:</h2>
+    <input [(ngModel)]="car.jahrgang" [ngModelOptions]="{standalone: true}" placeholder="2012" type="number" required>
 
-  <h2>Zustand*:</h2>
-  <select #zustand required>
-    <option value="Sehr Gut">Sehr gut</option>
-    <option value="Gut">Gut</option>
-    <option value="Mittelmässig">Mittelmässig</option>
-    <option value="Schlecht">Schlecht</option>
-    <option value="Sehr Schlecht">Sehr schlecht</option>
-  </select>
+    <h2>Kilometerstand*:</h2>
+    <input [(ngModel)]="car.kilometerstand" [ngModelOptions]="{standalone: true}" placeholder="12'000" type="number"
+           required>
 
-  <h2>Kraftstoffart*:</h2>
-  <select #kraftstoffart required>
-    <option value="Benzin">Benzin</option>
-    <option value="Diesel">Diesel</option>
-  </select>
+    <h2>Zustand*:</h2>
+    <select [(ngModel)]="car.zustand" [ngModelOptions]="{standalone: true}" required>
+      <option value="Sehr Gut">Sehr gut</option>
+      <option value="Gut">Gut</option>
+      <option value="Mittelmässig">Mittelmässig</option>
+      <option value="Schlecht">Schlecht</option>
+      <option value="Sehr Schlecht">Sehr schlecht</option>
+    </select>
 
-  <h2>Getriebe*:</h2>
-  <select #getriebe required>
-    <option value="Automatik">Automatik</option>
-    <option value="Manuell">Manuell</option>
-  </select>
+    <h2>Kraftstoffart*:</h2>
+    <select [(ngModel)]="car.kraftstoffart" [ngModelOptions]="{standalone: true}" required>
+      <option value="Benzin">Benzin</option>
+      <option value="Diesel">Diesel</option>
+    </select>
+  </div>
 
-  <h2>Email*:</h2>
-  <input #email placeholder="max.muster@mail.com" type="text" required>
+  <div class="input-group right">
+    <h2>Getriebe*:</h2>
+    <select [(ngModel)]="car.getriebe" [ngModelOptions]="{standalone: true}" required>
+      <option value="Automatik">Automatik</option>
+      <option value="Manuell">Manuell</option>
+    </select>
 
-  <h2>Preisvorstellung (in CHF)*:</h2>
-  <input #preisvorstellung placeholder="2000 - 4000" type="text" required>
+    <h2>Email*:</h2>
+    <input [(ngModel)]="car.email" [ngModelOptions]="{standalone: true}" placeholder="max.muster@mail.com" type="text"
+           required>
 
-  <h2>Bemerkungen:</h2>
-  <textarea #bemerkungen placeholder="Bemerkungen" class="remarks" ></textarea>
+    <h2>Preisvorstellung (in CHF)*:</h2>
+    <input [(ngModel)]="car.preisvorstellung" [ngModelOptions]="{standalone: true}" placeholder="2000 - 4000"
+           type="text" required>
 
-  <div class="submit">
-    <button (click)="sendMail(
-      marke.value,
-      modell.value,
-      jahrgang.value,
-      kilometerstand.value,
-      zustand.value,
-      kraftstoffart.value,
-      getriebe.value,
-      email.value,
-      preisvorstellung.value,
-      bemerkungen.value
-    )">
-      <mat-icon fontIcon="send" style=""></mat-icon>
-      Senden
-    </button>
+    <h2>Bemerkungen:</h2>
+    <textarea [(ngModel)]="car.bemerkungen" [ngModelOptions]="{standalone: true}" placeholder="Bemerkungen"
+              class="remarks"></textarea>
   </div>
 </form>
+
+<div class="submit">
+  <button [disabled]="!checkFieldsFilled()" (click)="sendMail()">
+    <mat-icon fontIcon="send" style=""></mat-icon>
+    Senden
+  </button>
+</div>
 <app-footer></app-footer>
