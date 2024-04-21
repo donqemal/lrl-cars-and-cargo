@@ -10,5 +10,6 @@ export const routes: Routes = [
   {path: 'über-uns', component: AboutUsComponent},
   {path: 'fahrzeuge', component: CarsComponent},
   {path: 'verkaufen', component: SellComponent},
-  {path: 'transport', component: TransportComponent}
+  {path: 'transport', component: TransportComponent},
+  {path: '**', redirectTo: '/'}
 ];
