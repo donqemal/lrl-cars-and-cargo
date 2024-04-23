@@ -1,2 +1,36 @@
-<h1 style="padding-top: 100px">Diese Seite ist im Aufbau!</h1>
+<h1 class="title">Wir transportieren Ihre Fahrzeuge sicher von A nach B!</h1>
+<div class="locations-container">
+  <div class="from">
+    <h1>Startort</h1>
+    <input class="input"
+           type="text"
+           #fromAdress>
+  </div>
+
+  <div class="to">
+    <h1>Endort</h1>
+    <input class="input"
+           type="text"
+           #toAdress>
+  </div>
+</div>
+@if (showFromAdress && showToAdress) {
+  <div class="info-container">
+    <div>
+      <h2>Von: {{ showFromAdress }}</h2>
+      <h2>Nach: {{ showToAdress }}</h2>
+    </div>
+
+    <div>
+      <h2>Distanz: {{ distance }}</h2>
+      <h2>Preis: ~CHF{{ price }}</h2>
+    </div>
+  </div>
+  <div class="accept-container">
+    <button (click)="navigatePage()">Angebot annehmen!</button>
+  </div>
+}
+
+<div id="map"></div>
+
 <app-footer></app-footer>
