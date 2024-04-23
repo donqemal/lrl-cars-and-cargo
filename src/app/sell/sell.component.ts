@@ -8,19 +8,7 @@ import {FooterComponent} from "../footer/footer.component";
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
-
-export type Car = {
-  marke: string;
-  modell: string;
-  jahrgang: number | null;
-  kilometerstand: number | null;
-  zustand: string;
-  kraftstoffart: string;
-  getriebe: string;
-  email: string;
-  bemerkungen?: string;
-  preisvorstellung: number | null;
-}
+import {Car} from "../model";
 
 @Component({
   selector: 'app-sell',
