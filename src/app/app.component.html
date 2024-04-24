@@ -5,4 +5,4 @@
 <div class="contact-circle-container" (click)="contactLRLPerWhatsapp()">
   <img src="assets/whatsapp.png" alt="whatsapp">
 </div>
-<router-outlet></router-outlet>
+<router-outlet (activate)="changeRoute()"></router-outlet>

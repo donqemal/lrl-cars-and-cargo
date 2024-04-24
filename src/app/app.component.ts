@@ -20,4 +20,11 @@ export class AppComponent {
   contactLRLPerWhatsapp() {
     window.open('https://wa.me/41766291070');
   }
+
+  changeRoute() {
+    window.scroll({
+      top: 0,
+      left: 0,
+    });
+  }
 }
