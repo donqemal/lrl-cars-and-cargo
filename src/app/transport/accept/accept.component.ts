@@ -68,8 +68,14 @@ export class AcceptComponent implements OnInit {
 
     this.http.post<any>(url, data, httpOptions).subscribe({
       next: () => {
-        this.toast.success('Ihre Anfrage wurde erfolgreich versendet!', undefined, {positionClass: 'toast-top-center'});
-        setTimeout(() => this.router.navigate(['/']), 2200);
+        this.toast.success('Sie werden automatisch auf die Homepage zurückgeleitet.', 'Ihre Anfrage wurde erfolgreich versendet!', {positionClass: 'toast-top-center'});
+        this.user = {
+          fullName: undefined,
+          email: undefined,
+          phone: undefined,
+          message: undefined
+        };
+        setTimeout(() => this.router.navigate(['/']), 4000);
       },
       error: () => {
         this.toast.error('Ihre Anfrage konnte nicht versendet werden! Bitte versuchen Sie es erneut', undefined, {positionClass: 'toast-top-center'});
