@@ -4,9 +4,9 @@
   width: 90%;
   margin: 150px auto auto;
 }
+
 .locations-container {
   margin-top: 30px;
-  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
 
@@ -40,15 +40,21 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: -10px;
+  margin-bottom: 30px;
 
   div {
     display: flex;
     flex-direction: column;
     max-width: 50%;
+    font-size: 19px;
   }
 
-  h1, h2 {
+  h2 {
     font-family: Lato-Bold, sans-serif;
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 0;
   }
 }
 
@@ -95,10 +101,17 @@
   .locations-container {
     flex-direction: column;
   }
+
   .info-container {
     h2 {
       font-family: Lato-Bold, sans-serif;
       font-size: 18px;
+    }
+  }
+
+  .accept-container {
+    button {
+      font-size: 16px;
     }
   }
 }
