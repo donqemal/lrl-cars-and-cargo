@@ -2,9 +2,10 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {FooterComponent} from "../footer/footer.component";
 import {FormsModule} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
+import {Router} from "@angular/router";
+import {Details} from "../model";
 // @ts-ignore
 import TravelMode = google.maps.TravelMode;
-import {Router} from "@angular/router";
 
 declare var google: any;
 
@@ -112,7 +113,15 @@ export class TransportComponent implements AfterViewInit {
       }
     );
   }
+
   navigatePage() {
-    this.router.navigate(['/akzeptieren'], {queryParams: {price: this.price, distance: this.distance}})
+    const details: Details = {
+      price: this.price,
+      distance: this.distance,
+      fromAdress: this.showFromAdress!,
+      toAdress: this.showToAdress!
+    };
+
+    this.router.navigate(['/akzeptieren'], {queryParams: {details: JSON.stringify(details)}});
   }
 }
