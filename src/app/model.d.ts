@@ -10,3 +10,17 @@ export type Car = {
   bemerkungen?: string;
   preisvorstellung: number | null;
 }
+
+export type Details = {
+  price: number;
+  distance: string;
+  fromAdress: string;
+  toAdress: string;
+}
+
+export type User = {
+  fullName?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+}
