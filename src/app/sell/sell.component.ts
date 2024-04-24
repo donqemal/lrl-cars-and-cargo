@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {KeyValuePipe, NgClass, NgForOf, NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
@@ -45,19 +45,6 @@ export class SellComponent {
     preisvorstellung: null,
     bemerkungen: ''
   };
-
-  carForm = new FormGroup({
-    marke: new FormControl('', Validators.required),
-    modell: new FormControl('', Validators.required),
-    jahrgang: new FormControl(null, Validators.required),
-    kilometerstand: new FormControl(null, Validators.required),
-    zustand: new FormControl('', Validators.required),
-    kraftstoffart: new FormControl('', Validators.required),
-    getriebe: new FormControl('', Validators.required),
-    preisvorstellung: new FormControl(null, Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    bemerkungen: new FormControl('')
-  });
 
   constructor(private http: HttpClient, private toast: ToastrService) {
   }
