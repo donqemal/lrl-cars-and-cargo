@@ -61,7 +61,7 @@ export class AcceptComponent implements OnInit {
       Nach=${this.details?.toAdress}&
       Preis=CHF${this.details?.price}&
       Distanz=${this.details?.distance}&
-      Vor- & Nachname=${this.user.fullName}&
+      Vor- und Nachname=${this.user.fullName}&
       Email=${this.user.email}&
       Telefonnummer=${this.user.phone}&
       Bemerkungen=${this.user.message ?? ''}`;
