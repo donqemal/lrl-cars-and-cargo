@@ -19,10 +19,16 @@
     margin: 0 auto;
   }
 
+  swiper-slide {
+    align-self: center;
+  }
+
   img {
     display: block;
     margin: 0 auto;
     border-radius: 10px;
+    max-width: 75vw;
+    height: 300px;
   }
 }
 
