@@ -13,5 +13,5 @@ import {FooterComponent} from "../footer/footer.component";
 })
 
 export class CarsComponent {
-
+  url: string = 'https://www.autoscout24.ch/de/hci/list?design=4669&filter=9895';
 }
