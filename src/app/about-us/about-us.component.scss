@@ -18,13 +18,14 @@ img {
 }
 
 .about-us-mobile {
-  width: 100vw;
+  width: 100%;
   margin-top: 15px;
 }
 
 .about-us {
   display: flex;
-  width: 75vw;
+  width: 90vw;
+  max-width: 1300px;
   margin: 35px auto auto;
   text-align: center;
 }

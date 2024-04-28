@@ -38,22 +38,25 @@
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.8342270045364!2d8.640623776278796!3d47.68763928237808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a81e379c5d9a7%3A0xb5c6caef39151857!2sFlurlingerweg%2015%2C%208245%20Feuerthalen!5e0!3m2!1sde!2sch!4v1713468437478!5m2!1sde!2sch"
       width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
-<footer *ngIf="window.innerWidth > 768">
-  &copy; 2024 LRL Cars & Cargo
-  <span> | Datenschutz</span>
-  <span> | Impressum</span>
-</footer>
-<footer *ngIf="window.innerWidth <= 768">
-  &copy; 2024 LRL Cars & Cargo
-  <div class="rights-container">
-    <div class="rights data">
-      Datenschutz
+@if (window.innerWidth <= 768) {
+  <footer>
+    &copy; 2024 LRL Cars & Cargo
+    <div class="rights-container">
+      <div class="rights data">
+        Datenschutz
+      </div>
+      <div class="rights impressum">
+        Impressum
+      </div>
     </div>
-    <div class="rights impressum">
-      Impressum
-    </div>
-  </div>
-</footer>
+  </footer>
+} @else {
+  <footer>
+    &copy; 2024 LRL Cars & Cargo
+    <span> | Datenschutz</span>
+    <span> | Impressum</span>
+  </footer>
+}

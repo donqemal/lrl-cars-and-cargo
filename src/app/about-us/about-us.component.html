@@ -3,7 +3,7 @@
 <h3>
   Willkommen auf meiner Webseite! Mein Name ist Lirjon Osmani, und ich bringe über 5 Jahre Erfahrung im Handel mit
   Occasionen mit. Meine Leidenschaft für Autos und mein Engagement für meine Kunden sind das Herzstück meiner Arbeit.
-<br><br>
+  <br><br>
   Ich weiss aus eigener Erfahrung, wie herausfordernd der Autokauf sein kann. Als begeisterter Autosammler und Verkäufer
   verstehe ich die Bedürfnisse meiner Kunden genau. Ich habe unzählige Fahrzeuge verkauft und besitze selbst eine
   Sammlung, die ich mit grosser Sorgfalt und Begeisterung pflege.
@@ -19,6 +19,10 @@
   <br><br>
   Danke, dass Sie meine Webseite besuchen. Ich freue mich darauf, Ihnen zu helfen!
 </h3>
-<img *ngIf="window.innerWidth <= 768" src="assets/about-us-mobile.png" alt="about-us-mobile" class="about-us-mobile">
-<img *ngIf="window.innerWidth > 768" src="assets/about-us.png" alt="about-us" class="about-us">
+@if (window.innerWidth <= 768) {
+  <img src="assets/about-us-mobile.png" alt="about-us-mobile" class="about-us-mobile">
+} @else {
+  <img src="assets/about-us.png" alt="about-us" class="about-us">
+}
+
 <app-footer></app-footer>

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {KeyValuePipe, NgClass, NgForOf, NgIf} from "@angular/common";
+import { KeyValuePipe, NgClass } from "@angular/common";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
 import {MatIcon} from "@angular/material/icon";
@@ -15,8 +15,6 @@ import {Car} from "../model";
   standalone: true,
   imports: [
     KeyValuePipe,
-    NgForOf,
-    NgIf,
     HttpClientModule,
     ReactiveFormsModule,
     MatIcon,
@@ -28,7 +26,7 @@ import {Car} from "../model";
     MatInputModule,
     NgClass,
     FormsModule
-  ],
+],
   templateUrl: './sell.component.html',
   styleUrl: './sell.component.scss',
 })
