@@ -5,11 +5,12 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 
   video {
     width: 102%;
     max-height: 650px;
-    object-fit: cover
+    object-fit: cover;
   }
 
   h1 {
