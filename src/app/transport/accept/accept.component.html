@@ -19,13 +19,13 @@
 
       <h2>Email*:</h2>
       <input [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder="max.muster@mail.com"
-             type="text"
+             type="email"
              required>
     </div>
 
     <div class="input-group right">
       <h2>Telefonnummer*:</h2>
-      <input [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}" placeholder="+41 79 123 45 67" type="text"
+      <input [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}" placeholder="+41 79 123 45 67" type="tel"
              required>
 
       <h2>Bemerkungen:</h2>

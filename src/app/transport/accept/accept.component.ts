@@ -40,13 +40,14 @@ export class AcceptComponent implements OnInit {
   }
 
   checkFieldsFilled() {
-    // TODO: Add validation for phone number
+    // only swiss numbers allowed at the moment
+    const isPhoneNumberValid = /^(0|(\+41\s?))((7[5-9])|(8[1-9]))\s?\d{3}\s?\d{2}\s?\d{2}$/.test(this.user.phone!);
     const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.user.email!);
     const areOtherFieldsFilled = Object.keys(this.user)
       .filter(key => key !== 'message')
       .every(key => (this.user as any)[key]);
 
-    return isEmailValid && areOtherFieldsFilled;
+    return isPhoneNumberValid && isEmailValid && areOtherFieldsFilled;
   }
 
   sendMail() {
