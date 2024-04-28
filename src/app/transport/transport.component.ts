@@ -4,6 +4,7 @@ import {FormsModule} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
 import {Details} from "../model";
+import {DataService} from "../data.service";
 // @ts-ignore
 import TravelMode = google.maps.TravelMode;
 
@@ -29,7 +30,7 @@ export class TransportComponent implements AfterViewInit {
   showFromAdress?: string;
   showToAdress?: string;
 
-  constructor(private toast: ToastrService, private router: Router) {
+  constructor(private toast: ToastrService, private router: Router, private dataService: DataService) {
   }
 
   ngAfterViewInit(): void {
@@ -118,10 +119,10 @@ export class TransportComponent implements AfterViewInit {
     const details: Details = {
       price: this.price,
       distance: this.distance,
-      fromAdress: this.showFromAdress!,
-      toAdress: this.showToAdress!
+      fromAddress: this.showFromAdress!,
+      toAddress: this.showToAdress!
     };
-
-    this.router.navigate(['/akzeptieren'], {queryParams: {details: JSON.stringify(details)}});
+    this.dataService.setDetails(details);
+    this.router.navigate(['/akzeptieren']);
   }
 }

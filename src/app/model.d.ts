@@ -14,8 +14,8 @@ export type Car = {
 export type Details = {
   price: number;
   distance: string;
-  fromAdress: string;
-  toAdress: string;
+  fromAddress: string;
+  toAddress: string;
 }
 
 export type User = {

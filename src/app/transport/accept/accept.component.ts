@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FooterComponent} from "../../footer/footer.component";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
+import {DataService} from "../../data.service";
 
 @Component({
   selector: 'app-accept',
@@ -29,11 +30,13 @@ export class AcceptComponent implements OnInit {
     message: undefined
   };
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private toast: ToastrService, private router: Router) {
+  constructor(private http: HttpClient, private toast: ToastrService, private router: Router, private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.details = JSON.parse(this.route.snapshot.queryParams['details']);
+    this.dataService.getDetails().subscribe(details => {
+      details ? this.details = details : this.router.navigate(['/']);
+    });
   }
 
   checkFieldsFilled() {
@@ -57,8 +60,8 @@ export class AcceptComponent implements OnInit {
     };
 
     let data = `
-      Von=${this.details?.fromAdress}&
-      Nach=${this.details?.toAdress}&
+      Von=${this.details?.fromAddress}&
+      Nach=${this.details?.toAddress}&
       Preis=CHF${this.details?.price}&
       Distanz=${this.details?.distance}&
       Vor- und Nachname=${this.user.fullName}&
