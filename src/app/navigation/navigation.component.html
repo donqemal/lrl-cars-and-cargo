@@ -6,9 +6,12 @@
 </div>
 
 <div class="mobile-navigation-container">
-  <mat-icon *ngIf="!mobileNavigationVisible" fontIcon="menu" (click)="toggleMobileNavigation()"></mat-icon>
-  <mat-icon *ngIf="mobileNavigationVisible" fontIcon="close" (click)="toggleMobileNavigation()"></mat-icon>
-  <div *ngIf="mobileNavigationVisible" class="mobile-navigation">
+  @if (mobileNavigationVisible) {
+  <mat-icon fontIcon="close" (click)="toggleMobileNavigation()"></mat-icon>
+  } @else {
+  <mat-icon fontIcon="menu" (click)="toggleMobileNavigation()"></mat-icon>
+  }
+  <div class="mobile-navigation" [ngClass]="mobileNavigationVisible ? 'animate' : 'hide'">
     <a (click)="navigatePage('/über-uns')">Über uns</a>
     <a (click)="navigatePage('/fahrzeuge')">Fahrzeuge</a>
     <a (click)="navigatePage('/verkaufen')">Auto verkaufen</a>

@@ -1,15 +1,17 @@
 import {Component, ElementRef, HostListener} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
-import {NgIf} from "@angular/common";
+
 import {Router, RouterLink} from "@angular/router";
+import {CommonModule, NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
   imports: [
     MatIcon,
-    NgIf,
-    RouterLink
+    RouterLink,
+    NgClass,
+    CommonModule
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'

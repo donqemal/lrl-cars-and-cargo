@@ -59,8 +59,14 @@
       }
     }
 
-    .mobile-navigation:active {
-      transition: top 0.3s ease;
+    .mobile-navigation.hide {
+      right: -150vh;
+      transition: all ease 0.5s;
+    }
+
+    .mobile-navigation.animate {
+      transition: all ease 0.5s;
+      right: 0;
     }
 
     mat-icon {
