@@ -3,7 +3,7 @@ import {FooterComponent} from "../footer/footer.component";
 
 
 @Component({
-  selector: 'app-buy',
+  selector: 'app-cars',
   standalone: true,
   imports: [
     FooterComponent,
@@ -13,5 +13,4 @@ import {FooterComponent} from "../footer/footer.component";
 })
 
 export class CarsComponent {
-  url: string = 'https://www.autoscout24.ch/de/hci/list?design=4669&filter=9895';
 }
