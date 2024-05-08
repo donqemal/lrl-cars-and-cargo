@@ -48,7 +48,7 @@ export class SellComponent {
   }
 
   sendMail() {
-    let url = "https://formspree.io/f/moqgyjrw";
+    let url = "https://formspree.io/f/mwkgzelo";
 
     const httpOptions = {
       headers: new HttpHeaders({
