@@ -40,4 +40,11 @@ export class NavigationComponent {
       this.toggleMobileNavigation();
     }
   }
+
+  @HostListener('document:scroll')
+  onScroll() {
+    if (this.mobileNavigationVisible) {
+      this.toggleMobileNavigation();
+    }
+  }
 }
