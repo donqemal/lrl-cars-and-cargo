@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FooterComponent} from "../footer/footer.component";
+import {EmbeddedContentComponent} from "../embedded-content/embedded-content.component";
 
 
 @Component({
@@ -7,6 +8,7 @@ import {FooterComponent} from "../footer/footer.component";
   standalone: true,
   imports: [
     FooterComponent,
+    EmbeddedContentComponent,
   ],
   templateUrl: './cars.component.html',
   styleUrl: './cars.component.scss',
