@@ -14,11 +14,12 @@
   }
 
   h1 {
-    font-family: Lato-Black, sans-serif;
+    -webkit-text-stroke: 1px white;
+    letter-spacing: 1.4px;
     line-height: 60px;
     margin-bottom: 60px;
     font-size: 60px;
-    font-weight: bolder;
+    font-weight: 700;
     position: absolute;
     width: 90%;
     filter: brightness(0) invert(1);
@@ -33,7 +34,8 @@
   }
 
   .buy-car {
-    font-family: Lato-Black, sans-serif;
+    text-wrap: nowrap;
+    font-weight: 700;
     background-color: #D2042D;
     color: white;
     border: none;
@@ -54,7 +56,8 @@
   }
 
   .sell-car {
-    font-family: Lato-Black, sans-serif;
+    text-wrap: nowrap;
+    font-weight: 700;
     background-color: white;
     color: #D2042D;
     border: none;
@@ -86,6 +89,7 @@
     margin-top: 140px !important;
 
     .buy-car {
+      text-wrap: pretty;
       font-size: 20px;
       width: 190px;
       height: auto;
@@ -93,6 +97,7 @@
     }
 
     .sell-car {
+      text-wrap: pretty;
       font-size: 20px;
       width: 190px;
       height: auto;

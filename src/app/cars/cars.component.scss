@@ -12,10 +12,11 @@
   }
 
   h1 {
-    font-family: Lato-Black, sans-serif;
+    -webkit-text-stroke: 1px white;
+    letter-spacing: 1.4px;
     line-height: 60px;
     font-size: 60px;
-    font-weight: bolder;
+    font-weight: 700;
     position: absolute;
     width: 90%;
     color: white;

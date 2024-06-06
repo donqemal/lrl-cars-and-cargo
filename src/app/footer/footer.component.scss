@@ -16,7 +16,6 @@
   }
 
   h1 {
-    font-family: Lato-Black, sans-serif;
     font-size: 24px;
     padding-top: 20px;
   }
@@ -26,6 +25,7 @@
     justify-content: center;
   }
   mat-icon {
+    font-family: 'Material Icons', sans-serif !important;
     margin-right: 5px;
     margin-bottom: -6px;
   }
@@ -57,7 +57,7 @@ span:hover {
     justify-content: center;
   }
 
-  iframe  {
+  iframe {
     max-width: 85%;
     height: 300px;
   }
