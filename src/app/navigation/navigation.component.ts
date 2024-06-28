@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 
 import {Router, RouterLink} from "@angular/router";
@@ -16,10 +16,17 @@ import {CommonModule, NgClass} from "@angular/common";
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   mobileNavigationVisible: boolean = false;
+  selectedNavItem: string = '';
 
   constructor(private router: Router, private elementRef: ElementRef) {
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe(() => {
+      this.selectedNavItem = this.router.url;
+    });
   }
 
   toggleMobileNavigation() {

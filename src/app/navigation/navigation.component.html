@@ -1,8 +1,9 @@
 <div class="navigation-container">
-  <a routerLink="über-uns">Über uns</a>
-  <a routerLink="fahrzeuge">Fahrzeuge</a>
-  <a routerLink="verkaufen">Auto verkaufen</a>
-  <a routerLink="transport">Cargo Transport</a>
+  <a routerLink="/" [class.active]="selectedNavItem === '/'">Home</a>
+  <a routerLink="über-uns" [class.active]="selectedNavItem === '/%C3%BCber-uns'">Über uns</a>
+  <a routerLink="fahrzeuge" [class.active]="selectedNavItem === '/fahrzeuge'">Fahrzeuge</a>
+  <a routerLink="verkaufen" [class.active]="selectedNavItem === '/verkaufen'">Auto verkaufen</a>
+  <a routerLink="transport" [class.active]="selectedNavItem === '/transport'">Cargo Transport</a>
 </div>
 
 <div class="mobile-navigation-container">
@@ -12,9 +13,10 @@
   <mat-icon fontIcon="menu" (click)="toggleMobileNavigation()"></mat-icon>
   }
   <div class="mobile-navigation" [ngClass]="mobileNavigationVisible ? 'animate' : 'hide'">
-    <a (click)="navigatePage('/über-uns')">Über uns</a>
-    <a (click)="navigatePage('/fahrzeuge')">Fahrzeuge</a>
-    <a (click)="navigatePage('/verkaufen')">Auto verkaufen</a>
-    <a (click)="navigatePage('/transport')">Cargo Transport</a>
+    <a (click)="navigatePage('/')" [class.active]="selectedNavItem === '/'">Home</a>
+    <a (click)="navigatePage('/über-uns')" [class.active]="selectedNavItem === '/%C3%BCber-uns'">Über uns</a>
+    <a (click)="navigatePage('/fahrzeuge')" [class.active]="selectedNavItem === '/fahrzeuge'">Fahrzeuge</a>
+    <a (click)="navigatePage('/verkaufen')" [class.active]="selectedNavItem === '/verkaufen'">Auto verkaufen</a>
+    <a (click)="navigatePage('/transport')" [class.active]="selectedNavItem === '/transport'">Cargo Transport</a>
   </div>
 </div>
