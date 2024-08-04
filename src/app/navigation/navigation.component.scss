@@ -16,13 +16,13 @@
     white-space: nowrap;
     padding: 15px 15px;
     transition: 0.3s;
+    border-radius: 10px;
   }
 
   a.active {
     background-color: #8c8787;
     color: white;
     padding: 15px 15px;
-    border-radius: 10px;
   }
 
   a:hover {
@@ -30,7 +30,6 @@
     background-color: #8c8787;
     color: white;
     padding: 15px 15px;
-    border-radius: 10px;
   }
 }
 
