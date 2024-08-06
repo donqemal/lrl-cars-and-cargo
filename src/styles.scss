@@ -235,7 +235,16 @@ button.toast-close-button {
   }
 }
 
-header {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 1s;
 }

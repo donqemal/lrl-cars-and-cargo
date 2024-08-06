@@ -1,13 +1,13 @@
-<h1 class="title">Wir transportieren Ihre Fahrzeuge sicher von A nach B!</h1>
+<h1 class="title hidden run-once" appIntersectionObserver>Wir transportieren Ihre Fahrzeuge sicher von A nach B!</h1>
 <div class="locations-container">
-  <div class="from">
+  <div class="from hidden" appIntersectionObserver>
     <h1>Startort</h1>
     <input class="input"
            type="text"
            #fromAdress>
   </div>
 
-  <div class="to">
+  <div class="to hidden" appIntersectionObserver>
     <h1>Endort</h1>
     <input class="input"
            type="text"
@@ -31,6 +31,6 @@
   </div>
 }
 
-<div id="map"></div>
+<div id="map" class="hidden" appIntersectionObserver></div>
 
 <app-footer></app-footer>

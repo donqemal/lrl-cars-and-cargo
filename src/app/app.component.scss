@@ -57,6 +57,12 @@ header {
   }
 }
 
+.shadow {
+  transition: all 1s;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
 .contact-circle-container {
   animation: pulsate 2s infinite;
 }
@@ -72,6 +78,7 @@ header {
     left: 10px;
     height: 58px;
     width: 58px;
+
     img {
       height: 40px;
     }

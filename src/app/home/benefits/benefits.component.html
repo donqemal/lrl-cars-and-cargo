@@ -1,11 +1,9 @@
-<div class="benefits-container">
+<div class="benefits-container hidden" appIntersectionObserver>
   <img src="assets/logo.png" alt="logo">
   <div class="content">
     <h2>Unsere Cargo-Dienstleistungen bieten Ihnen:</h2>
-    <li>Jahrelange Erfahrung</li>
-    <li>Zuverlässigkeit</li>
-    <li>Moderne Flotte</li>
-    <li>Pünktlichkeit</li>
-    <li>Professionelle Transportlösung</li>
+    @for (benefit of benefits; track benefit) {
+      <li class="hidden run-once" appIntersectionObserver>{{ benefit }}</li>
+    }
   </div>
 </div>

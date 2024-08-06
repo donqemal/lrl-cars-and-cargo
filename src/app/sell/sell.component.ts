@@ -9,6 +9,7 @@ import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {Car} from "../model";
+import {IntersectionObserverDirective} from "../intersection-observer.directive";
 
 @Component({
   selector: 'app-sell',
@@ -25,8 +26,9 @@ import {Car} from "../model";
     MatFormFieldModule,
     MatInputModule,
     NgClass,
-    FormsModule
-],
+    FormsModule,
+    IntersectionObserverDirective
+  ],
   templateUrl: './sell.component.html',
   styleUrl: './sell.component.scss',
 })

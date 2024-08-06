@@ -7,6 +7,7 @@ import {Details} from "../model";
 import {DataService} from "../data.service";
 // @ts-ignore
 import TravelMode = google.maps.TravelMode;
+import {IntersectionObserverDirective} from "../intersection-observer.directive";
 
 declare var google: any;
 
@@ -17,6 +18,7 @@ declare var google: any;
   imports: [
     FooterComponent,
     FormsModule,
+    IntersectionObserverDirective,
   ],
   styleUrls: ['./transport.component.scss'],
 })

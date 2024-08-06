@@ -1,11 +1,13 @@
 import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {NgClass} from "@angular/common";
+import {IntersectionObserverDirective} from "../../intersection-observer.directive";
 
 @Component({
   selector: 'app-swipe-images',
   standalone: true,
   imports: [
-    NgClass
+    NgClass,
+    IntersectionObserverDirective
   ],
   templateUrl: './swipe-images.component.html',
   styleUrl: './swipe-images.component.scss',

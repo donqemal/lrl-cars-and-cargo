@@ -2,9 +2,9 @@
   <video [autoplay]="true" [muted]="true" [loop]="true" playsinline oncontextmenu="return false">
     <source src="/assets/homepage-background-video.mp4" type="video/mp4">
   </video>
-  <h1>Keine Bremsen für gute Deals!</h1>
+  <h1 class="hidden run-once" appIntersectionObserver>Keine Bremsen für gute Deals!</h1>
   <div class="cars-container">
-    <button class="buy-car" (click)="navigatePage('/fahrzeuge')">Fahrzeuge</button>
-    <button class="sell-car" (click)="navigatePage('/verkaufen')">Auto Verkaufen</button>
+    <button class="buy-car hidden run-once" (click)="navigatePage('/fahrzeuge')" appIntersectionObserver>Fahrzeuge</button>
+    <button class="sell-car hidden run-once" (click)="navigatePage('/verkaufen')" appIntersectionObserver>Auto Verkaufen</button>
   </div>
 </div>
