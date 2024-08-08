@@ -17,7 +17,7 @@
     padding: 15px 15px;
     transition: 0.3s;
     border-radius: 10px;
-    position: relative; /* Added to fix the positioning of ::before */
+    position: relative;
   }
 
   a::before {
@@ -75,7 +75,7 @@
         padding: 15px 15px;
         width: fit-content;
         margin: auto auto 10px;
-        position: relative; /* Ensure ::before is positioned relative to the a element */
+        position: relative;
       }
 
       a::before {
