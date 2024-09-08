@@ -24,7 +24,6 @@ export class AppComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) {
   }
 
-
   ngAfterViewInit() {
     if (this.header) {
       this.scrollListener = this.renderer.listen('window', 'scroll', () => {
@@ -44,6 +43,7 @@ export class AppComponent implements AfterViewInit {
 
   changeRoute() {
     window.scroll({
+      behavior: 'smooth',
       top: 0,
       left: 0,
     });
