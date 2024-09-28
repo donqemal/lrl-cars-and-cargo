@@ -1,8 +1,8 @@
 <div class="services-container hidden" appIntersectionObserver>
   @for (service of services; track service.id) {
     <div class="service hidden" appIntersectionObserver>
-      <img [src]='"assets/service" + service.id + ".png"' alt="service">
-      <h4>{{ service.description }}</h4>
+      <img [src]='"assets/service" + service.id + ".png"' alt="Anzubietender Service" height="100">
+      <h2>{{ service.description }}</h2>
       <p>{{ service.text }}</p>
     </div>
   }
