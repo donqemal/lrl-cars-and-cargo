@@ -22,17 +22,16 @@
       color: white;
       font-weight: 700;
     }
+
     ul {
       list-style-type: none;
       padding: 0;
     }
-    p {
+
+    li {
       font-size: 18px;
       color: lightgrey;
-
-      li {
-        margin-bottom: 10px;
-      }
+      margin-bottom: 10px;
     }
   }
 }
