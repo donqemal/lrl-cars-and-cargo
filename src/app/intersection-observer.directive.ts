@@ -13,9 +13,7 @@ export class IntersectionObserverDirective implements AfterViewInit {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           this.el.nativeElement.classList.add('show');
-          if (this.el.nativeElement.classList.contains('run-once') || window.innerWidth < 768) {
-            observer.unobserve(this.el.nativeElement);
-          }
+          observer.unobserve(this.el.nativeElement);
         } else {
           this.el.nativeElement.classList.remove('show');
         }
