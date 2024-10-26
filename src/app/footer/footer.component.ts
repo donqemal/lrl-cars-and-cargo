@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -12,6 +13,13 @@ import {MatIcon} from "@angular/material/icon";
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+
+  constructor(private router: Router) {
+  }
+
+  navigate(route: string) {
+    this.router.navigate([route]);
+  }
 
   protected readonly window = window;
 }
