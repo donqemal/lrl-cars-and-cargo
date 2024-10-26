@@ -5,6 +5,7 @@ import {CarsComponent} from "./cars/cars.component";
 import {SellComponent} from "./sell/sell.component";
 import {TransportComponent} from "./transport/transport.component";
 import {AcceptComponent} from "./transport/accept/accept.component";
+import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent,},
@@ -13,5 +14,6 @@ export const routes: Routes = [
   {path: 'verkaufen', component: SellComponent},
   {path: 'transport', component: TransportComponent},
   {path: 'akzeptieren', component: AcceptComponent},
+  {path: 'datenschutz', component: PrivacyPolicyComponent},
   {path: '**', redirectTo: '/'}
 ];
