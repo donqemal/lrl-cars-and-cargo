@@ -235,16 +235,76 @@ button.toast-close-button {
   }
 }
 
+@keyframes from-left {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-20%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes from-right {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes from-top {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes from-bottom {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.from-left {
+  animation: from-left 1.2s ease forwards;
+}
+
+.from-right {
+  animation: from-right 1.2s ease forwards;
+}
+
+.from-top {
+  animation: from-top 1.2s ease forwards;
+}
+
+.from-bottom {
+  animation: from-bottom 1.2s ease forwards;
+}
+
 .hidden {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-20%);
-  transition: all 1.2s;
 }
 
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
-  transition: all 1.2s;
-}

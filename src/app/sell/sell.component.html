@@ -1,9 +1,9 @@
-<div class="container hidden run-once" appIntersectionObserver>
+<div class="container hidden" appIntersectionObserver>
   <img src="assets/handshake.png" alt="Hand Schütteln">
-  <h1 class="hidden run-once" appIntersectionObserver>Ihr Auto schnell und einfach verkaufen!</h1>
+  <h1 class="hidden" appIntersectionObserver>Ihr Auto schnell und einfach verkaufen!</h1>
 </div>
 
-<h1 class="hidden run-once" appIntersectionObserver>Angaben Fahrzeug / Person</h1>
+<h1 class="hidden" appIntersectionObserver>Angaben Fahrzeug / Person</h1>
 
 <form class="form-container hidden" appIntersectionObserver>
   <div class="input-group">
@@ -57,7 +57,7 @@
   </div>
 </form>
 
-<div class="submit hidden run-once" appIntersectionObserver>
+<div class="submit hidden" appIntersectionObserver>
   <button [disabled]="!checkFieldsFilled()" (click)="sendMail()">
     <mat-icon fontIcon="send" style=""></mat-icon>
     Senden

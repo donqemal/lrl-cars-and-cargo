@@ -1,10 +1,15 @@
 <div class="welcome-container">
-  <video [autoplay]="true" [muted]="true" [loop]="true" playsinline oncontextmenu="return false">
-    <source src="/assets/homepage-background-video.mp4" type="video/mp4">
-  </video>
-  <h1 class="hidden run-once" appIntersectionObserver>Keine Bremsen für gute Deals!</h1>
+
+  <h1 class="animate-top" appIntersectionObserver>Keine Bremsen für gute Deals!</h1>
+  <h2 class="animate-top" appIntersectionObserver>
+    Bei LRL Cars and Cargo ist es uns ein Anliegen, qualitativ
+    hochwertige Gebrauchtfahrzeuge zu außergewöhnlich günstigen Preisen anzubieten
+  </h2>
   <div class="cars-container">
-    <button class="buy-car hidden run-once" (click)="navigatePage('/fahrzeuge')" appIntersectionObserver>Fahrzeuge</button>
-    <button class="sell-car hidden run-once" (click)="navigatePage('/verkaufen')" appIntersectionObserver>Auto Verkaufen</button>
+    <button class="buy-car" (click)="navigatePage('/fahrzeuge')">Fahrzeuge
+    </button>
+    <button class="sell-car" (click)="navigatePage('/verkaufen')">Auto
+      Verkaufen
+    </button>
   </div>
 </div>
