@@ -1,7 +1,7 @@
 <div class="swipe-images-container">
   <h3>Wir bieten Oldtimer-Autos, speziell angepasste Fahrzeuge und Occasionen an, um Ihre Träume zu erfüllen und ein
     aufregendes Fahrerlebnis zu bieten.</h3>
-  <swiper-container navigation="true" css-mode="true" pagination="true" spaceBetween="20">
+  <swiper-container #swiperContainer navigation="true" css-mode="true" pagination="true" class="slide">
     @for (car of cars; track car) {
       <swiper-slide>
         <img [src]="'assets/' + car + '.png'" alt="Auto">
