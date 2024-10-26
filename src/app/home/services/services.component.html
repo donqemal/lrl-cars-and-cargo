@@ -1,7 +1,8 @@
-<div class="services-container hidden" appIntersectionObserver>
+<h1 class="animate-bottom" appIntersectionObserver>Unsere Angebote</h1>
+<div class="services-container">
   @for (service of services; track service.id) {
-    <div class="service hidden" appIntersectionObserver>
-      <img [src]='"assets/service" + service.id + ".png"' alt="Anzubietender Service" height="100">
+    <div class="service animate-left hidden" appIntersectionObserver>
+      <img [src]='"assets/service" + service.id + ".png"' alt="Unsere Angebote, Icon by cubydesign" height="100">
       <h2>{{ service.description }}</h2>
       <p>{{ service.text }}</p>
     </div>
