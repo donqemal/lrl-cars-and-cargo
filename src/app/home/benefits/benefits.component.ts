@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import {IntersectionObserverDirective} from "../../intersection-observer.directive";
+import {Component} from '@angular/core';
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-benefits',
   standalone: true,
   imports: [
-    IntersectionObserverDirective
+    NgClass
   ],
   templateUrl: './benefits.component.html',
   styleUrl: './benefits.component.scss'

@@ -1,11 +1,9 @@
-<div class="benefits-container hidden" appIntersectionObserver>
-  <img src="assets/logo.png" alt="LRL Logo">
-  <div class="content">
-    <h2>Unsere Cargo-Dienstleistungen bieten Ihnen:</h2>
-    <ul>
-      @for (benefit of benefits; track benefit) {
-        <li class="hidden run-once" appIntersectionObserver>{{ benefit }}</li>
-      }
-    </ul>
-  </div>
+<h1>Unsere Dienstleistungen</h1>
+
+<div class="benefits-container">
+  @for (benefit of benefits; track $i; let $i = $index) {
+    <div class="content">
+      <p>{{ benefit }}</p>
+    </div>
+  }
 </div>
