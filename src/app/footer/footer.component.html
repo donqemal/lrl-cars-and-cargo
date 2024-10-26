@@ -45,10 +45,10 @@
   <footer>
     &copy; 2024 LRL Cars & Cargo
     <div class="rights-container">
-      <div class="rights data">
+      <div class="rights data" (click)="navigate('datenschutz')">
         Datenschutz
       </div>
-      <div class="rights impressum">
+      <div class="rights impressum" (click)="navigate('impressum')">
         Impressum
       </div>
     </div>
@@ -56,7 +56,7 @@
 } @else {
   <footer>
     &copy; 2024 LRL Cars & Cargo
-    <span> | Datenschutz</span>
-    <span> | Impressum</span>
+    <span (click)="navigate('datenschutz')"> | Datenschutz</span>
+    <span (click)="navigate('impressum')"> | Impressum</span>
   </footer>
 }
