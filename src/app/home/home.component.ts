@@ -6,6 +6,7 @@ import {CarBannerComponent} from "./car-banner/car-banner.component";
 import {ServicesComponent} from "./services/services.component";
 import {WelcomeComponent} from "./welcome/welcome.component";
 import {NgClass} from "@angular/common";
+import {IntersectionObserverDirective} from "../intersection-observer.directive";
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ import {NgClass} from "@angular/common";
     BenefitsComponent,
     SwipeImagesComponent,
     FooterComponent,
-    NgClass
+    NgClass,
+    IntersectionObserverDirective
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
