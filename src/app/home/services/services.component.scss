@@ -32,7 +32,12 @@ h1 {
   height: 300px;
   transition: all 0.3s ease-in-out;
 
+  p {
+    text-align: center;
+  }
+
   &:hover {
+    cursor: pointer;
     scale: 1.02;
   }
 
@@ -52,10 +57,6 @@ h1 {
   &:hover::before {
     opacity: 1;
   }
-}
-
-.service:hover {
-
 }
 
 .service:nth-child(2) {
@@ -92,8 +93,20 @@ h1 {
     .service {
       flex: 0 0 auto;
       width: 100%;
-      max-width: none;
-      margin-bottom: 20px;
+      max-width: 250px;
+      max-height: 250px;
+      margin-bottom: 10px;
+
+      &:hover {
+        scale: 1;
+      }
+      &::before {
+        display: none;
+      }
+
+      &:hover::before {
+        pointer-events: none;
+      }
     }
 
     .service:nth-child(2) {

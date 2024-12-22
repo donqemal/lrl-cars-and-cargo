@@ -99,18 +99,15 @@
     h1 {
       font-size: 36px;
       line-height: 50px;
-      margin-top: 115px;
+      margin-top: 165px;
     }
 
     h2 {
-      font-size: 13px;
-      -webkit-text-stroke: 0.5px white;
-      line-height: inherit;
-      margin-top: 40px;
+      display: none;
     }
   }
   .cars-container {
-    margin-top: 152px !important;
+    margin-top: 120px !important;
 
     .buy-car {
       text-wrap: pretty;
