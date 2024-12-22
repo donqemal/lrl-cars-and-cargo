@@ -1,4 +1,7 @@
 .car-banner-container {
+  position: relative;
+  z-index: 2;
+
   width: 100%;
   box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.18);
   background-color: #3a3a3a;
