@@ -43,7 +43,6 @@ export class AppComponent implements AfterViewInit {
 
   changeRoute() {
     window.scroll({
-      behavior: 'smooth',
       top: 0,
       left: 0,
     });
