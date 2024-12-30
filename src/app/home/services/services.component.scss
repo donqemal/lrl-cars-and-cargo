@@ -100,6 +100,8 @@ h2 {
     flex-direction: column;
 
     .wheel {
+      max-width: 92vw;
+      max-height: none;
       border-radius: 15px 15px 0 0;
     }
 
@@ -109,7 +111,7 @@ h2 {
       border-right: 2px solid #D5302B;
       border-bottom: 2px solid #D5302B;
       height: auto;
-      width: 399px;
+      width: 91vw;
       margin-top: -200px;
       background-color: white;
     }
