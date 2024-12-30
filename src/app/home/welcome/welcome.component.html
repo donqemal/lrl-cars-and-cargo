@@ -1,15 +1,20 @@
 <div class="welcome-container">
-  <img src="assets/background.jpg" alt="Hintergrundbild">
-  <h1 class="animate-top" appIntersectionObserver>Keine Bremsen für gute Deals!</h1>
-  <h2 class="animate-top" appIntersectionObserver>
-    Bei LRL Cars & Cargo ist es uns ein Anliegen, qualitativ
-    hochwertige Gebrauchtfahrzeuge zu aussergewöhnlich günstigen Preisen anzubieten
-  </h2>
-  <div class="cars-container">
-    <button class="buy-car" (click)="navigatePage('/fahrzeuge')">Fahrzeuge
-    </button>
-    <button class="sell-car" (click)="navigatePage('/verkaufen')">Auto
-      Verkaufen
-    </button>
+  <div class="parallax">
+    <img class="parallax-img" src="assets/red-background.jpg" alt="Parallax Image">
+  </div>
+  <div class="content">
+    <h1 class="hidden animate-top" appIntersectionObserver>Keine Bremsen für gute Deals!</h1>
+    <div class="hidden cars-container animate-bottom" appIntersectionObserver>
+      <button class="buy-car" (click)="navigatePage('/fahrzeuge')">Fahrzeuge
+      </button>
+      <button class="sell-car" (click)="navigatePage('/verkaufen')">Auto
+        Verkaufen
+      </button>
+    </div>
+  </div>
+  <div class="arrow hidden" appIntersectionObserver>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </div>

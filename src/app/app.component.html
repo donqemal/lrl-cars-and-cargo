@@ -1,8 +1,17 @@
 <header #header>
-  <img src="assets/logo.svg" alt="LRL Logo" routerLink="" (click)="changeRoute()">
+  <img src="assets/logo.svg"
+       class="animate-bottom"
+       alt="LRL Logo"
+       routerLink=""
+       (click)="changeRoute()"
+       appIntersectionObserver>
   <app-navigation></app-navigation>
 </header>
+
 <div class="contact-circle-container" (click)="contactLRLPerWhatsapp()">
   <img src="assets/whatsapp.png" alt="Whatsapp Logo" height="300">
 </div>
-<router-outlet (activate)="changeRoute()"></router-outlet>
+
+<main [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet" (activate)="changeRoute()"></router-outlet>
+</main>

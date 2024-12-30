@@ -1,35 +1,67 @@
+.background {
+  background: white;
+  padding: 60px 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .wheel {
+    max-height: 550px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+
+  .services {
+    border-top: 2px solid #D5302B;
+    border-right: 2px solid #D5302B;
+    border-bottom: 2px solid #D5302B;
+    height: 546px;
+    margin-top: -5px;
+    width: 70%;
+    max-width: 1200px;
+  }
+}
+
 h1 {
   text-align: center;
   color: black !important;
-  font-family: Serif, serif !important;
-  -webkit-text-stroke: 1px black;
+  font-family: "Bebas Neue", serif !important;
   letter-spacing: 1.4px;
   line-height: 60px;
-  margin-top: 45px;
   font-size: 40px;
   font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+h2 {
+  text-align: center;
 }
 
 .services-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 20px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: auto auto; /* Two rows that adjust based on content */
+  place-items: center;
+  align-content: center;
+  height: 85%;
+  column-gap: 20px;
 }
 
 .service {
-  background-color: #F7F8F9;
-  border: 1.5px solid #D5302B;
-  flex: 0 1 300px;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  max-width: 250px;
+  max-height: 250px;
   transition: all 0.3s ease-in-out;
 
   p {
@@ -38,75 +70,62 @@ h1 {
 
   &:hover {
     cursor: pointer;
-    scale: 1.02;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3); /* White overlay with opacity */
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 1;
-  }
-
-  &:hover::before {
-    opacity: 1;
+    scale: 1.05;
   }
 }
 
 .service:nth-child(2) {
   animation-delay: 200ms;
-  background-color: #D5302B !important;
-  color: white;
 }
 
 .service:nth-child(3) {
-  animation-delay: 300ms;
+  animation-delay: 600ms;
 }
 
 .service:nth-child(4) {
-  animation-delay: 400ms;
+  animation-delay: 1000ms;
 }
 
 .service:nth-child(5) {
-  animation-delay: 500ms;
+  animation-delay: 1400ms;
 }
 
-@media screen and (min-width: 1920px) {
-  .services-container {
-    max-width: 1800px;
+@media screen and (max-width: 1000px) {
+  h1 {
+    margin-top: -200px;
+    margin-bottom: 200px;
+    color: white !important;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .services-container {
-    margin-top: 20px;
+  .container {
     flex-direction: column;
-    align-items: center;
-    max-width: 90%;
+
+    .wheel {
+      border-radius: 15px 15px 0 0;
+    }
+
+    .services {
+      border-top: none;
+      border-left: 2px solid #D5302B;
+      border-right: 2px solid #D5302B;
+      border-bottom: 2px solid #D5302B;
+      height: auto;
+      width: 399px;
+      margin-top: -200px;
+      background-color: white;
+    }
 
     .service {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 250px;
-      max-height: 250px;
-      margin-bottom: 10px;
+      scale: 1;
 
       &:hover {
         scale: 1;
       }
-      &::before {
-        display: none;
-      }
+    }
 
-      &:hover::before {
-        pointer-events: none;
-      }
+    .services-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
     }
 
     .service:nth-child(2) {
@@ -114,15 +133,15 @@ h1 {
     }
 
     .service:nth-child(3) {
-      animation-delay: 300ms;
+      animation-delay: 200ms;
     }
 
     .service:nth-child(4) {
-      animation-delay: 400ms;
+      animation-delay: 200ms;
     }
 
     .service:nth-child(5) {
-      animation-delay: 500ms;
+      animation-delay: 200ms;
     }
   }
 }

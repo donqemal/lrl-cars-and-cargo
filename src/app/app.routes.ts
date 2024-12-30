@@ -9,13 +9,13 @@ import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component"
 import {ImprintComponent} from "./imprint/imprint.component";
 
 export const routes: Routes = [
-  {path: '', component: HomeComponent,},
-  {path: 'über-uns', component: AboutUsComponent},
-  {path: 'fahrzeuge', component: CarsComponent},
-  {path: 'verkaufen', component: SellComponent},
-  {path: 'transport', component: TransportComponent},
-  {path: 'akzeptieren', component: AcceptComponent},
-  {path: 'datenschutz', component: PrivacyPolicyComponent},
-  {path: 'impressum', component: ImprintComponent},
+  {path: '', component: HomeComponent, data: {animation: 'HomePage'}},
+  {path: 'über-uns', component: AboutUsComponent, data: {animation: 'AboutUsPage'}},
+  {path: 'fahrzeuge', component: CarsComponent, data: {animation: 'CarsPage'}},
+  {path: 'verkaufen', component: SellComponent, data: {animation: 'SellPage'}},
+  {path: 'transport', component: TransportComponent, data: {animation: 'TransportPage'}},
+  {path: 'akzeptieren', component: AcceptComponent, data: {animation: 'AcceptPage'}},
+  {path: 'datenschutz', component: PrivacyPolicyComponent, data: {animation: 'PrivacyPolicyPage'}},
+  {path: 'impressum', component: ImprintComponent, data: {animation: 'ImprintPage'}},
   {path: '**', redirectTo: '/'}
 ];

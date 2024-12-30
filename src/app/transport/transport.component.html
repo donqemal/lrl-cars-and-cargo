@@ -1,36 +1,38 @@
-<h1 class="title hidden" appIntersectionObserver>Wir transportieren Ihre Fahrzeuge sicher von A nach B!</h1>
-<div class="locations-container">
-  <div class="from hidden" appIntersectionObserver>
-    <h1>Startort</h1>
-    <input class="input"
-           type="text"
-           #fromAdress>
-  </div>
+<div class="wrapper" appIntersectionObserver>
+  <h1 class="title animate-top hidden" appIntersectionObserver>Sicherer Transport Ihrer Fahrzeuge <br/>von A nach B!
+  </h1>
+  <div class="locations-container">
+    <div class="from animate-bottom hidden" appIntersectionObserver>
+      <h1>Startort</h1>
+      <input class="input"
+             type="text"
+             #fromAdress>
+    </div>
 
-  <div class="to hidden" appIntersectionObserver>
-    <h1>Endort</h1>
-    <input class="input"
-           type="text"
-           #toAdress>
+    <div class="to animate-bottom hidden" appIntersectionObserver>
+      <h1>Endort</h1>
+      <input class="input"
+             type="text"
+             #toAdress>
+    </div>
   </div>
+  @if (showFromAdress && showToAdress) {
+    <div class="info-container">
+      <div>
+        <h2>Von:</h2>{{ showFromAdress }}
+        <h2>Nach:</h2>{{ showToAdress }}
+      </div>
+
+      <div>
+        <h2>Distanz:</h2>{{ distance }}
+        <h2>Preis:</h2>~CHF{{ price }}
+      </div>
+    </div>
+    <div class="accept-container">
+      <button (click)="navigatePage()">Weiter zum Angebot</button>
+    </div>
+  }
+
+  <div id="map" class="hidden" appIntersectionObserver></div>
 </div>
-@if (showFromAdress && showToAdress) {
-  <div class="info-container">
-    <div>
-      <h2>Von:</h2>{{ showFromAdress }}
-      <h2>Nach:</h2>{{ showToAdress }}
-    </div>
-
-    <div>
-      <h2>Distanz:</h2>{{ distance }}
-      <h2>Preis:</h2>~CHF{{ price }}
-    </div>
-  </div>
-  <div class="accept-container">
-    <button (click)="navigatePage()">Weiter zum Angebot</button>
-  </div>
-}
-
-<div id="map" class="hidden" appIntersectionObserver></div>
-
 <app-footer></app-footer>

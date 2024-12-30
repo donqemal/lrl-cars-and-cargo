@@ -1,8 +1,11 @@
 .title {
-  font-weight: 700;
+  font-family: "Bebas Neue", serif !important;
+  font-size: 40px;
+  line-height: 40px;
   text-align: center;
   width: 90%;
   margin: 150px auto auto;
+  color: white;
 }
 
 .locations-container {
@@ -11,7 +14,8 @@
   flex-direction: row;
 
   h1 {
-    font-weight: 600;
+    font-weight: 500;
+    color: white;
   }
 
   input {

@@ -1,10 +1,19 @@
-<h1 class="animate-bottom" appIntersectionObserver>Unsere Angebote</h1>
-<div class="services-container">
-  @for (service of services; track service.id) {
-    <div class="service animate-left hidden" appIntersectionObserver>
-      <img [src]='"assets/service" + service.id + ".png"' alt="Unsere Angebote, Icon by cubydesign" height="100">
-      <h2>{{ service.description }}</h2>
-      <p>{{ service.text }}</p>
+<div class="background">
+  <div class="container">
+    <div>
+      <img class="wheel" src="assets/wheel.jpeg" alt="Bild von Rad">
     </div>
-  }
+    <div class="services">
+      <h1 class="animate-bottom" appIntersectionObserver>Unsere Angebote</h1>
+      <div class="services-container">
+        @for (service of services; track service.id) {
+          <div class="service animate-bottom hidden" appIntersectionObserver>
+            <img [src]='"assets/service" + service.id + ".png"' alt="Unsere Angebote, Icon by cubydesign" height="100">
+            <h2>{{ service.description }}</h2>
+            <p>{{ service.text }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,17 +1,28 @@
 .container {
-  margin: 100px auto auto;
+  margin: 130px auto auto;
   padding-bottom: 50px;
-  width: 90%;
+  width: 95%;
 }
+
 h1 {
-  color: #333;
+  color: white;
   font-weight: bolder;
   font-size: 26px;
 }
+
+h2, p {
+  color: white;
+}
+
 h3, h4 {
-  color: #333;
+  color: white;
   font-weight: bolder;
 }
+
+a {
+  color: lightblue;
+}
+
 p {
   margin: 0 0 10px;
 }
