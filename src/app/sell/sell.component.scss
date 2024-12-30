@@ -4,7 +4,6 @@
 
 .container {
   display: flex;
-  text-align: center;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
@@ -92,9 +91,9 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 26px;
+  font-size: 20px;
   cursor: pointer;
-  width: 230px;
+  width: 180px;
   height: 60px;
   transition: 0.3s;
 }
