@@ -101,7 +101,7 @@ h2 {
 
     .wheel {
       max-width: 92vw;
-      max-height: none;
+      max-height: 600px;
       border-radius: 15px 15px 0 0;
     }
 
@@ -112,6 +112,7 @@ h2 {
       border-bottom: 2px solid #D5302B;
       height: auto;
       width: 91vw;
+      max-width: 435px;
       margin-top: -200px;
       background-color: white;
     }
