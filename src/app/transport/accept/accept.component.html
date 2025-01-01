@@ -1,45 +1,47 @@
-<form class="form-container">
-  <div class="details">
-    <div class="left">
-      <h2>Von:</h2>{{ details?.fromAddress }}
-      <h2>Nach:</h2>{{ details?.toAddress }}
+<div class="wrapper">
+  <form class="form-container">
+    <div class="details">
+      <div class="left">
+        <h2>Von:</h2>{{ details?.fromAddress }}
+        <h2>Nach:</h2>{{ details?.toAddress }}
+      </div>
+
+      <div class="right">
+        <h2>Preis:</h2>~CHF{{ details?.price }}
+        <h2>Distanz:</h2>{{ details?.distance }}
+      </div>
     </div>
 
-    <div class="right">
-      <h2>Preis:</h2>~CHF{{ details?.price }}
-      <h2>Distanz:</h2>{{ details?.distance }}
+    <div class="input-container">
+      <div class="input-group">
+        <h2>Vor- & Nachname*:</h2>
+        <input [(ngModel)]="user.fullName" [ngModelOptions]="{standalone: true}" placeholder="Max Muster" type="text"
+               required>
+
+        <h2>Email*:</h2>
+        <input [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder="max.muster@mail.com"
+               type="email"
+               required>
+      </div>
+
+      <div class="input-group right">
+        <h2>Telefonnummer*:</h2>
+        <input [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}" placeholder="+41 79 123 45 67" type="tel"
+               required>
+
+        <h2>Bemerkungen:</h2>
+        <textarea [(ngModel)]="user.message" [ngModelOptions]="{standalone: true}" placeholder="Bemerkungen"
+                  class="remarks"></textarea>
+      </div>
     </div>
+  </form>
+
+  <div class="submit">
+    <button [disabled]="!checkFieldsFilled()" (click)="sendMail()">
+      <mat-icon fontIcon="send" style=""></mat-icon>
+      Senden
+    </button>
   </div>
-
-  <div class="input-container">
-    <div class="input-group">
-      <h2>Vor- & Nachname*:</h2>
-      <input [(ngModel)]="user.fullName" [ngModelOptions]="{standalone: true}" placeholder="Max Muster" type="text"
-             required>
-
-      <h2>Email*:</h2>
-      <input [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder="max.muster@mail.com"
-             type="email"
-             required>
-    </div>
-
-    <div class="input-group right">
-      <h2>Telefonnummer*:</h2>
-      <input [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}" placeholder="+41 79 123 45 67" type="tel"
-             required>
-
-      <h2>Bemerkungen:</h2>
-      <textarea [(ngModel)]="user.message" [ngModelOptions]="{standalone: true}" placeholder="Bemerkungen"
-                class="remarks"></textarea>
-    </div>
-  </div>
-</form>
-
-<div class="submit">
-  <button [disabled]="!checkFieldsFilled()" (click)="sendMail()">
-    <mat-icon fontIcon="send" style=""></mat-icon>
-    Senden
-  </button>
 </div>
 
 <app-footer></app-footer>
