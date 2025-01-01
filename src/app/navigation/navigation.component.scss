@@ -47,6 +47,24 @@
 }
 
 @media screen and (max-width: 1130px) {
+  @keyframes expandHeight {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 300px;
+    }
+  }
+
+  @keyframes collapseHeight {
+    0% {
+      height: 300px;
+    }
+    100% {
+      height: 0;
+    }
+  }
+
   .navigation-container {
     display: none;
   }
@@ -69,7 +87,7 @@
       border-radius: 0 0 13px 13px;
       box-shadow: 0 8px 7px 0 rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      max-height: 0;
+      height: 300px;
       visibility: hidden;
 
       a {
@@ -109,7 +127,7 @@
     }
 
     .mobile-navigation.animate {
-      animation: expandHeight 0.65s forwards;
+      animation: expandHeight 0.4s forwards;
       visibility: visible;
     }
 
@@ -129,23 +147,5 @@
         cursor: pointer;
       }
     }
-  }
-}
-
-@keyframes expandHeight {
-  0% {
-    max-height: 0;
-  }
-  100% {
-    max-height: 350px;
-  }
-}
-
-@keyframes collapseHeight {
-  0% {
-    max-height: 350px;
-  }
-  100% {
-    max-height: 0;
   }
 }
