@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {Details, User} from "../../model";
+import {Details, User} from "../../../model";
 import {MatIcon} from "@angular/material/icon";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {FooterComponent} from "../../footer/footer.component";
+import {FooterComponent} from "../../../components/footer/footer.component";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
-import {DataService} from "../../data.service";
+import {DataService} from "../../../services/data.service";
 
 @Component({
   selector: 'app-accept',

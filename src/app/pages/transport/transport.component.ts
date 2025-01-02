@@ -1,13 +1,13 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ViewChild} from '@angular/core';
-import {FooterComponent} from "../footer/footer.component";
+import {FooterComponent} from "../../components/footer/footer.component";
 import {FormsModule} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
-import {Details} from "../model";
-import {DataService} from "../data.service";
+import {Details} from "../../model";
+import {DataService} from "../../services/data.service";
 // @ts-ignore
 import TravelMode = google.maps.TravelMode;
-import {IntersectionObserverDirective} from "../intersection-observer.directive";
+import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
 
 declare var google: any;
 

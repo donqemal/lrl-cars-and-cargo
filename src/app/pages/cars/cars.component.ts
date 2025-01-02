@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {FooterComponent} from "../footer/footer.component";
-import {EmbeddedContentComponent} from "../embedded-content/embedded-content.component";
-import {IntersectionObserverDirective} from "../intersection-observer.directive";
+import {FooterComponent} from "../../components/footer/footer.component";
+import {EmbeddedContentComponent} from "../../components/embedded-content/embedded-content.component";
+import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
 
 
 @Component({

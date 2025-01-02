@@ -4,12 +4,12 @@ import { KeyValuePipe, NgClass } from "@angular/common";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
 import {MatIcon} from "@angular/material/icon";
-import {FooterComponent} from "../footer/footer.component";
+import {FooterComponent} from "../../components/footer/footer.component";
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
-import {Car} from "../model";
-import {IntersectionObserverDirective} from "../intersection-observer.directive";
+import {Car} from "../../model";
+import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
 
 @Component({
   selector: 'app-sell',

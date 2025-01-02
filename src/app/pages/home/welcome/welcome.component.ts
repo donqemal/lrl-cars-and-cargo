@@ -1,6 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {Router} from "@angular/router";
-import {IntersectionObserverDirective} from "../../intersection-observer.directive";
+import {IntersectionObserverDirective} from "../../../directives/intersection-observer.directive";
 
 @Component({
   selector: 'app-welcome',

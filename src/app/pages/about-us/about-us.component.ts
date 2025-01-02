@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 
-import {FooterComponent} from "../footer/footer.component";
-import {IntersectionObserverDirective} from "../intersection-observer.directive";
+import {FooterComponent} from "../../components/footer/footer.component";
+import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
 
 @Component({
   selector: 'app-about-us',

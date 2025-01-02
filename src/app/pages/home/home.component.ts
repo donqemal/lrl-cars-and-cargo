@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {FooterComponent} from "../footer/footer.component";
+import {FooterComponent} from "../../components/footer/footer.component";
 import {SwipeImagesComponent} from "./swipe-images/swipe-images.component";
 import {BenefitsComponent} from "./benefits/benefits.component";
 import {CarBannerComponent} from "./car-banner/car-banner.component";
 import {ServicesComponent} from "./services/services.component";
 import {WelcomeComponent} from "./welcome/welcome.component";
 import {NgClass} from "@angular/common";
-import {IntersectionObserverDirective} from "../intersection-observer.directive";
+import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
 
 @Component({
   selector: 'app-home',

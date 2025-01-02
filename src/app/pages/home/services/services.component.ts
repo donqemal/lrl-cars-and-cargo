@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IntersectionObserverDirective} from "../../intersection-observer.directive";
+import {IntersectionObserverDirective} from "../../../directives/intersection-observer.directive";
 
 @Component({
   selector: 'app-services',

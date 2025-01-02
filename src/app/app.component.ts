@@ -5,10 +5,10 @@ import {FormsModule} from "@angular/forms";
 import {MatButtonToggle} from "@angular/material/button-toggle";
 import {MatAnchor, MatButton, MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
-import {HomeComponent} from "./home/home.component";
+import {HomeComponent} from "./pages/home/home.component";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
-import {NavigationComponent} from "./navigation/navigation.component";
-import {IntersectionObserverDirective} from "./intersection-observer.directive";
+import {NavigationComponent} from "./components/navigation/navigation.component";
+import {IntersectionObserverDirective} from "./directives/intersection-observer.directive";
 
 @Component({
   selector: 'app-root',
