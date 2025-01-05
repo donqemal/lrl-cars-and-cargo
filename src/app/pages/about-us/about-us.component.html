@@ -1,7 +1,7 @@
-<div class="wrapper animate-bottom" appIntersectionObserver>
-  <h1 class="">Ihr vertrauenswürdiger Partner für Occasionen und Oldtimer!</h1>
+<div class="wrapper">
+  <h1 class="animate-top" appIntersectionObserver>Ihr vertrauenswürdiger Partner für Occasionen und Oldtimer!</h1>
 
-  <h3>
+  <h3 class="animate-bottom" appIntersectionObserver>
     Mein Name ist Lirjon Osmani, und ich bringe über 5 Jahre Erfahrung im Handel mit
     Occasionen mit. Meine Leidenschaft für Autos und mein Engagement für meine Kunden sind das Herzstück meiner Arbeit.
     <br><br>
@@ -25,10 +25,9 @@
   </h3>
 </div>
 @if (window.innerWidth <= 768) {
-  <img src="../../../assets/about-us-mobile.png" alt="Zeitspanne über uns" class="about-us-mobile animate-bottom hidden"
-       appIntersectionObserver>
+  <img src="assets/about-us-mobile.png" alt="Zeitspanne über uns" class="about-us-mobile">
 } @else {
-  <img src="../../../assets/about-us.png" alt="Zeitspanne über uns" class="about-us animate-bottom hidden" appIntersectionObserver>
+  <img src="assets/about-us.png" alt="Zeitspanne über uns" class="about-us">
 }
 
 <app-footer></app-footer>
