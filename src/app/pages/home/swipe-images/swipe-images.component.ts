@@ -18,11 +18,13 @@ export class SwipeImagesComponent implements AfterViewInit {
     const prevButton = swiperContainer.querySelector('.swiper-button-prev');
 
     const buttonStyle = `
-    height: 30px !important;
-    width: 30px !important;
-    padding: 15px !important;
-    background: rgba(0, 0, 0, 0.7) !important;
-    border-radius: 100% !important;
+    height: 12px;
+    width: 12px;
+    padding: 10px;
+    background: rgba(80, 80, 80);
+    border-radius: 100%;
+    stroke: white;
+    stroke-width: 2px;
   `;
     nextButton.style.cssText = buttonStyle;
     prevButton.style.cssText = buttonStyle;
