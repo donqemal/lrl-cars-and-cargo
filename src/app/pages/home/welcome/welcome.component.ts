@@ -16,6 +16,13 @@ export class WelcomeComponent {
   constructor(private router: Router) {
   }
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    const parallaxImg = document.querySelector('.parallax-img') as HTMLElement;
+    const scrollPosition = window.scrollY;
+    parallaxImg.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+  }
+
   navigatePage(page: string) {
     this.router.navigate([page]);
   }
