@@ -21,7 +21,7 @@
       top: 0;
       left: 0;
       z-index: 1;
-      animation: smoothZoom 1.5s;
+      animation: smoothZoom 5.5s;
     }
   }
 
@@ -37,7 +37,7 @@
 
   @keyframes smoothZoom {
     0% {
-      scale: 1.4;
+      scale: 1.6;
     }
     100% {
       scale: 1;
