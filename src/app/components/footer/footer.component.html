@@ -43,7 +43,7 @@
 </div>
 @if (window.innerWidth <= 768) {
   <footer>
-    &copy; 2024 LRL Cars & Cargo
+    &copy; {{ currentYear }} LRL Cars & Cargo
     <div class="rights-container">
       <div class="rights data" (click)="navigate('datenschutz')">
         Datenschutz
@@ -55,7 +55,7 @@
   </footer>
 } @else {
   <footer>
-    &copy; 2024 LRL Cars & Cargo
+    &copy; {{ currentYear }} LRL Cars & Cargo
     <span (click)="navigate('datenschutz')"> | Datenschutz</span>
     <span (click)="navigate('impressum')"> | Impressum</span>
   </footer>
