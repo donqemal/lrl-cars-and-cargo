@@ -17,24 +17,6 @@ import {IntersectionObserverDirective} from "./directives/intersection-observer.
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [
-    trigger('routeAnimations', [
-      transition('* <=> *', [
-        query(':enter, :leave', [
-          style({
-            position: 'absolute',
-            width: '100%',
-            opacity: 0
-          })
-        ], {optional: true}),
-        query(':enter', [
-          style({opacity: 0}),
-          animate('700ms ease-in-out', style({opacity: 1})),
-        ], {optional: true}),
-        query(':leave', [
-          animate('700ms ease-in-out', style({opacity: 0})),
-        ], {optional: true})
-      ])
-    ])
   ]
 })
 export class AppComponent implements AfterViewInit {
