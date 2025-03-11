@@ -41,6 +41,7 @@ h1 {
 
 h2 {
   text-align: center;
+  margin-bottom: 2px;
 }
 
 .services-container {
@@ -49,7 +50,7 @@ h2 {
   grid-template-rows: auto auto; /* Two rows that adjust based on content */
   place-items: center;
   align-content: center;
-  height: 85%;
+  height: 80%;
   column-gap: 20px;
 }
 
@@ -63,6 +64,10 @@ h2 {
   max-width: 250px;
   max-height: 250px;
   transition: all 0.3s ease-in-out;
+
+  img {
+    height: 135px;
+  }
 
   p {
     text-align: center;
@@ -87,7 +92,11 @@ h2 {
 }
 
 .service:nth-child(5) {
-  animation-delay: 1400ms;
+  animation-delay: 1200ms;
+}
+
+.service:nth-child(6) {
+  animation-delay: 1600ms;
 }
 
 @media screen and (max-width: 1000px) {
@@ -128,7 +137,7 @@ h2 {
     .services-container {
       display: flex;
       flex-direction: column;
-      row-gap: 20px;
+      row-gap: 10px;
     }
 
     .service:nth-child(2) {
@@ -146,7 +155,11 @@ h2 {
     .service:nth-child(5) {
       animation-delay: 200ms;
     }
+
+    .service:nth-child(6) {
+      animation-delay: 200ms;
   }
+}
 }
 
 @media(prefers-reduced-motion) {

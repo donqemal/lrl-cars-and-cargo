@@ -11,7 +11,4 @@
 <div class="contact-circle-container" (click)="contactLRLPerWhatsapp()">
   <img src="assets/whatsapp.png" alt="Whatsapp Logo" height="300">
 </div>
-
-<main [@routeAnimations]="prepareRoute(outlet)">
-  <router-outlet #outlet="outlet" (activate)="changeRoute()"></router-outlet>
-</main>
+<router-outlet #outlet="outlet" (activate)="changeRoute()"></router-outlet>

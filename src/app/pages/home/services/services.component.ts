@@ -17,5 +17,6 @@ export class ServicesComponent {
     {id: 3, description: 'Unschlagbare Preise', text: 'Die besten Preise auf dem Markt!'},
     {id: 4, description: 'Transport', text: 'Transport Ihres Autos zu Ihnen nach Hause!'},
     {id: 5, description: 'Support', text: 'Unterstützung bei allen Fragen rund um Ihr Auto!'},
+    {id: 6, description: 'Probefahrt', text: 'Probefahren unserer Autos!'}
   ];
 }

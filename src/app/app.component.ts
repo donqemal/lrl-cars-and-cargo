@@ -1,4 +1,3 @@
-import {trigger, transition, style, animate, query} from '@angular/animations';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {AfterViewInit, Component, ElementRef, Renderer2, ViewChild} from "@angular/core";
 import {FormsModule} from "@angular/forms";
@@ -16,8 +15,7 @@ import {IntersectionObserverDirective} from "./directives/intersection-observer.
   imports: [RouterOutlet, FormsModule, MatButtonToggle, MatButton, MatIcon, HomeComponent, RouterLink, MatMenuTrigger, MatMenu, MatMenuItem, MatIconButton, MatAnchor, NavigationComponent, IntersectionObserverDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [
-  ]
+  animations: []
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild('header', {static: false}) header: ElementRef | undefined;
