@@ -26,6 +26,9 @@ export class IntersectionObserverDirective implements AfterViewInit {
             case 'bottom':
               this.el.nativeElement.classList.add('from-bottom');
               break;
+            case 'slow-bottom':
+              this.el.nativeElement.classList.add('from-bottom-slow');
+              break;
             default:
               this.el.nativeElement.classList.add('from-left'); // Default animation
           }
@@ -42,6 +45,7 @@ export class IntersectionObserverDirective implements AfterViewInit {
     if (this.el.nativeElement.classList.contains('animate-left')) return 'left';
     if (this.el.nativeElement.classList.contains('animate-right')) return 'right';
     if (this.el.nativeElement.classList.contains('animate-bottom')) return 'bottom';
+    if (this.el.nativeElement.classList.contains('animate-bottom-slow')) return 'slow-bottom';
     return ''; // Default or empty if no directional class is found
   }
 }

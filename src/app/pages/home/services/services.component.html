@@ -1,18 +1,54 @@
-<div class="background">
-  <div class="container">
-    <div>
-      <img class="wheel" src="assets/wheel.jpeg" alt="Bild von Rad">
+<div class="container">
+  <h1>Kundenerlebnis</h1>
+  <div class="car-container">
+    <div class="bullets">
+      <div class="bullet">
+        <div class="text" style="text-align: end">
+          Verkauf
+          <p>Finden Sie jetzt Ihr Traumauto!</p>
+        </div>
+        <div class="number left">1</div>
+      </div>
+      <div class="bullet">
+        <div class="text" style="text-align: end">
+          Ankauf
+          <p>Wir kaufen Ihr Auto zum Bestpreis!</p>
+        </div>
+        <div class="number left">2</div>
+      </div>
+      <div class="bullet">
+        <div class="text" style="text-align: end">
+          Unschlagbare Preise
+          <p>Die besten Preise auf dem Markt!</p>
+        </div>
+        <div class="number left">3</div>
+      </div>
     </div>
-    <div class="services">
-      <h1 class="animate-bottom" appIntersectionObserver>Unsere Angebote</h1>
-      <div class="services-container">
-        @for (service of services; track service.id) {
-          <div class="service animate-bottom hidden" appIntersectionObserver>
-            <img [src]='"assets/service" + service.id + ".png"' alt="Unsere Angebote" height="100">
-            <h2>{{ service.description }}</h2>
-            <p>{{ service.text }}</p>
-          </div>
-        }
+    <img src="assets/car_top.png" alt="Top Image"
+         class="car-top animate-bottom-slow"
+         height="2048" width="1032"
+         appIntersectionObserver>
+    <div class="bullets bottom">
+      <div class="bullet end same-line">
+        <div class="number right">4</div>
+        <div class="text">
+          Probefahrt
+          <p>Probefahren unserer Autos!</p>
+        </div>
+      </div>
+      <div class="bullet end">
+        <div class="number right">5</div>
+        <div class="text">
+          Transport
+          <p>Transport Ihres Autos zu Ihnen nach Hause!</p>
+        </div>
+      </div>
+      <div class="bullet end">
+        <div class="number right">6</div>
+        <div class="text">
+          Support
+          <p>Unterstützung bei allen Fragen rund um Ihr Auto!</p>
+        </div>
       </div>
     </div>
   </div>

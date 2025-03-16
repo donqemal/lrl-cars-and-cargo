@@ -1,169 +1,223 @@
-.background {
-  background: white;
-  padding: 60px 0;
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .wheel {
-    max-height: 550px;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-  }
-
-  .services {
-    border-top: 2px solid #D5302B;
-    border-right: 2px solid #D5302B;
-    border-bottom: 2px solid #D5302B;
-    height: 546px;
-    margin-top: -5px;
-    width: 70%;
-    max-width: 1200px;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  background-color: white;
 }
 
 h1 {
-  text-align: center;
-  color: black !important;
   font-family: "Bebas Neue", serif !important;
-  letter-spacing: 1.4px;
-  line-height: 60px;
-  font-size: 40px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-
-h2 {
+  font-size: 52px;
   text-align: center;
-  margin-bottom: 2px;
+  margin-top: 30px;
 }
 
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  grid-template-rows: auto auto; /* Two rows that adjust based on content */
-  place-items: center;
-  align-content: center;
-  height: 80%;
-  column-gap: 20px;
+.car-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  max-width: 1500px;
+  height: 100%;
+  position: relative;
 }
 
-.service {
-  padding: 10px;
-  box-sizing: border-box;
+.car-top {
+  opacity: 0;
+  animation-delay: 0.5s;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  height: 700px;
+  width: auto;
+}
+
+.bullets {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  height: 700px;
+  position: relative;
+}
+
+.bullet {
+  display: flex;
   align-items: center;
-  max-width: 250px;
-  max-height: 250px;
-  transition: all 0.3s ease-in-out;
+  justify-content: flex-end;
+  position: relative;
 
-  img {
-    height: 135px;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  &:hover {
-    cursor: pointer;
-    scale: 1.05;
+  .text {
+    margin-top: 12px;
+    width: 220px;
+    font-weight: bold;
   }
 }
 
-.service:nth-child(2) {
-  animation-delay: 200ms;
+.number {
+  height: 50px;
+  width: 50px;
+  border-radius: 2px;
+  background-color: #e80808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.service:nth-child(3) {
-  animation-delay: 600ms;
+.left::after {
+  content: "";
+  position: absolute;
+  right: -210px;
+  width: 210px;
+  height: 2px;
+  background-color: red;
 }
 
-.service:nth-child(4) {
-  animation-delay: 1000ms;
+.left::before {
+  content: "";
+  position: absolute;
+  left: 490px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
 }
 
-.service:nth-child(5) {
-  animation-delay: 1200ms;
+.right::after {
+  content: "";
+  position: absolute;
+  right: 288px;
+  width: 210px;
+  height: 2px;
+  background-color: red;
 }
 
-.service:nth-child(6) {
-  animation-delay: 1600ms;
+.right::before {
+  content: "";
+  position: absolute;
+  left: -212px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
 }
 
-@media screen and (max-width: 1000px) {
-  h1 {
-    margin-top: -200px;
-    margin-bottom: 200px;
-    color: white !important;
+.end {
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1550px) {
+  .left::after {
+    right: -110px;
+    width: 110px;
   }
-  .container {
+
+  .left::before {
+    left: 390px;
+  }
+
+  .right::after {
+    width: 110px;
+  }
+
+  .right::before {
+    left: -112px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .left::after {
+    display: none;
+  }
+
+  .left::before {
+    display: none;
+  }
+
+  .right::after {
+    display: none;
+  }
+
+  .right::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .car-container {
     flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
 
-    .wheel {
-      max-width: 92vw;
-      max-height: 600px;
-      border-radius: 15px 15px 0 0;
+  .bullets {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 200px 200px;
+    gap: 20px;
+    position: absolute;
+    z-index: 2;
+    max-width: 400px;
+    margin-top: 100px;
+  }
+
+  .bottom {
+    display: grid;
+    top: 26%;
+    grid-template-columns: auto auto;
+    grid-template-rows: 200px 200px;
+  }
+
+  .same-line {
+    grid-column: 2;
+  }
+
+  .bullet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    max-width: 220px;
+    height: 120px;
+    width: 120px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(9.6px);
+    -webkit-backdrop-filter: blur(9.6px);
+    border: 1px solid rgba(255, 255, 255, 0.26);
+
+    .number {
+      height: 20px;
+      width: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #e80808;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
     }
 
-    .services {
-      border-top: none;
-      border-left: 2px solid #D5302B;
-      border-right: 2px solid #D5302B;
-      border-bottom: 2px solid #D5302B;
-      height: auto;
-      width: 91vw;
-      max-width: 435px;
-      margin-top: -200px;
-      background-color: white;
-    }
+    .text {
+      text-align: center !important;
+      width: 140px;
+      height: 100px;
+      margin-top: 5px;
 
-    .service {
-      scale: 1;
-
-      &:hover {
-        scale: 1;
+      p {
+        margin: 0 !important;
+        padding: 0 !important;
       }
     }
-
-    .services-container {
-      display: flex;
-      flex-direction: column;
-      row-gap: 10px;
-    }
-
-    .service:nth-child(2) {
-      animation-delay: 200ms;
-    }
-
-    .service:nth-child(3) {
-      animation-delay: 200ms;
-    }
-
-    .service:nth-child(4) {
-      animation-delay: 200ms;
-    }
-
-    .service:nth-child(5) {
-      animation-delay: 200ms;
-    }
-
-    .service:nth-child(6) {
-      animation-delay: 200ms;
   }
-}
-}
 
-@media(prefers-reduced-motion) {
-  .hidden {
-    animation: none;
+  .left {
+    order: -1;
   }
 }
