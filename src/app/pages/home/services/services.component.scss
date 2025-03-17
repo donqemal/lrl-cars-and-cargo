@@ -67,7 +67,6 @@ h1 {
   margin-right: 10px;
   margin-left: 10px;
 }
-
 .left::after {
   content: "";
   position: absolute;
@@ -75,6 +74,9 @@ h1 {
   width: 210px;
   height: 2px;
   background-color: red;
+  animation: draw-long 2s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 15%;
 }
 
 .left::before {
@@ -90,10 +92,13 @@ h1 {
 .right::after {
   content: "";
   position: absolute;
-  right: 288px;
+  left: -210px;
   width: 210px;
   height: 2px;
   background-color: red;
+  animation: draw-long 2s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 15%;
 }
 
 .right::before {
@@ -110,10 +115,24 @@ h1 {
   justify-content: flex-start;
 }
 
+
+@keyframes draw-long {
+  from {
+    width: 0;
+  }
+  to {
+    width: 210px;
+  }
+}
+
+
 @media screen and (max-width: 1550px) {
   .left::after {
     right: -110px;
     width: 110px;
+    animation: draw-short 2s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 15%;
   }
 
   .left::before {
@@ -122,10 +141,23 @@ h1 {
 
   .right::after {
     width: 110px;
+    left: -110px;
+    animation: draw-short 2s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 15%;
   }
 
   .right::before {
     left: -112px;
+  }
+
+  @keyframes draw-short {
+    from {
+      width: 0;
+    }
+    to {
+      width: 110px;
+    }
   }
 }
 
