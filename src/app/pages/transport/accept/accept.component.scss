@@ -9,8 +9,8 @@
 
 .info-container {
   display: flex;
-  justify-content: center;
-  gap: 120px;
+  justify-content: space-evenly;
+  gap: 30px;
 
   p {
     display: flex;
@@ -22,6 +22,10 @@
     font-size: 1.25rem;
     margin-top: 15px;
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
   }
 }
 
