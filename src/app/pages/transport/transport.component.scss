@@ -1,120 +1,60 @@
-.title {
-  font-family: "Bebas Neue", serif !important;
-  font-size: 40px;
-  line-height: 40px;
-  text-align: center;
-  width: 90%;
-  margin: 150px auto auto;
-  color: white;
+@import 'variables';
+@import 'mixins';
+
+.container {
+  max-width: 1200px;
+  margin: 90px auto 0 auto;
+  width: 100%;
 }
 
-.locations-container {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
+.section-header h2 {
+  font-family: 'Bebas Neue', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-dark;
+  text-align: center;
+  width: 90%;
+  margin: auto;
 
-  h1 {
-    font-weight: 500;
-    color: white;
-  }
-
-  input {
-    width: 80%;
-    margin: auto auto 20px;
-    font-size: 20px;
-    border-radius: 5px;
-    border: 3px solid #bf0202;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-  }
-
-  .from, .to {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  @media (max-width: 768px) {
+    font-size: 2rem;
   }
 }
 
 .info-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-evenly;
-  margin-top: -10px;
-  margin-bottom: 30px;
-  color: white;
+  gap: 30px;
+  margin-top: 30px;
+  color: $text-dark;
 
   div {
     display: flex;
     flex-direction: column;
+    font-size: 1rem;
     max-width: 50%;
-    font-size: 19px;
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 1.25rem;
     margin-top: 15px;
     margin-bottom: 0;
   }
-}
 
-.accept-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  @media (max-width: 768px) {
+    align-items: center;
 
-  button {
-    font-weight: 700;
-    background-color: #bf0202;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 22px;
-    cursor: pointer;
-    height: 60px;
-    transition: 0.3s;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  button:hover {
-    background-color: #ff0000;
-    transition: 0.3s;
+    h2 {
+      font-size: 1rem;
+    }
   }
 }
 
-
-#map {
-  width: 80%;
+.map-container {
+  width: 100%;
   height: 450px;
   border-radius: 10px;
-  margin: auto auto 50px;
+  margin-top: 40px;
+  background-color: $background-light;
+  box-shadow: $box-shadow;
 }
-
-@media screen and (max-width: 768px) {
-  .title {
-    margin: 120px auto auto;
-  }
-
-  .locations-container {
-    flex-direction: column;
-  }
-
-  .info-container {
-    h2 {
-      font-size: 18px;
-    }
-  }
-
-  .accept-container {
-    button {
-      font-size: 16px;
-    }
-  }
-}
-

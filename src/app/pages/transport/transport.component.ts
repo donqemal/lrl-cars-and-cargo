@@ -8,6 +8,7 @@ import {DataService} from "../../services/data.service";
 // @ts-ignore
 import TravelMode = google.maps.TravelMode;
 import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
+import {MatIcon} from "@angular/material/icon";
 
 declare var google: any;
 
@@ -19,6 +20,7 @@ declare var google: any;
     FooterComponent,
     FormsModule,
     IntersectionObserverDirective,
+    MatIcon,
   ],
   styleUrls: ['./transport.component.scss'],
 })

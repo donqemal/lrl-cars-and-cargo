@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {Component, ViewChild} from '@angular/core';
+import {FormsModule, NgModel, ReactiveFormsModule} from "@angular/forms";
 import { KeyValuePipe, NgClass } from "@angular/common";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
@@ -33,6 +33,8 @@ import {IntersectionObserverDirective} from "../../directives/intersection-obser
   styleUrl: './sell.component.scss',
 })
 export class SellComponent {
+  @ViewChild('emailInput') emailInput!: NgModel;
+
   car: Car = {
     marke: '',
     modell: '',
@@ -86,6 +88,7 @@ export class SellComponent {
           preisvorstellung: null,
           bemerkungen: ''
         }
+      this.emailInput.reset();
       },
       error: () => {
         this.toast.error('Ihre Anfrage konnte nicht versendet werden! Bitte versuchen Sie es erneut', undefined, {positionClass: 'toast-top-center'});

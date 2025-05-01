@@ -1,38 +1,69 @@
-<div class="wrapper">
-  <h1 class="title animate-top hidden" appIntersectionObserver>Sicherer Transport Ihrer Fahrzeuge <br/>von A nach B!
-  </h1>
-  <div class="locations-container">
-    <div class="from animate-bottom hidden" appIntersectionObserver>
-      <h1>Startort</h1>
-      <input class="input"
-             type="text"
-             #fromAdress>
+<div class="form-section">
+  <div class="container">
+    <div class="section-header animate-top" appIntersectionObserver>
+      <h2>Sicherer Transport Ihrer Fahrzeuge von A nach B!</h2>
     </div>
 
-    <div class="to animate-bottom hidden" appIntersectionObserver>
-      <h1>Endort</h1>
-      <input class="input"
-             type="text"
-             #toAdress>
+    <div class="card animate-bottom" appIntersectionObserver>
+      <form class="form-container">
+        <div class="form-grid">
+          <div class="form-column">
+            <div class="form-group">
+              <label for="fromAdress">Startort<span class="required">*</span></label>
+              <div class="input-container" [class.has-value]="fromAdress?.value">
+                <input
+                  id="fromAdress"
+                  type="text"
+                  placeholder="z.B. Zürich"
+                  #fromAdress
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-column">
+            <div class="form-group">
+              <label for="toAdress">Endort<span class="required">*</span></label>
+              <div class="input-container" [class.has-value]="toAdress?.value">
+                <input
+                  id="toAdress"
+                  type="text"
+                  placeholder="z.B. Genf"
+                  #toAdress
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        @if (showFromAdress && showToAdress) {
+          <div class="info-container animate-bottom">
+            <div>
+              <h2>Von:</h2>{{ showFromAdress }}
+              <h2>Nach:</h2>{{ showToAdress }}
+            </div>
+            <div>
+              <h2>Distanz:</h2>{{ distance }}
+              <h2>Preis:</h2>~CHF{{ price }}
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" (click)="navigatePage()" class="submit-button">
+              <span class="button-content">
+                <mat-icon fontIcon="send"></mat-icon>
+                <span>Weiter zum Angebot</span>
+              </span>
+            </button>
+          </div>
+        }
+
+        <div id="map" class="map-container animate-bottom" appIntersectionObserver></div>
+      </form>
     </div>
   </div>
-  @if (showFromAdress && showToAdress) {
-    <div class="info-container">
-      <div>
-        <h2>Von:</h2>{{ showFromAdress }}
-        <h2>Nach:</h2>{{ showToAdress }}
-      </div>
-
-      <div>
-        <h2>Distanz:</h2>{{ distance }}
-        <h2>Preis:</h2>~CHF{{ price }}
-      </div>
-    </div>
-    <div class="accept-container">
-      <button (click)="navigatePage()">Weiter zum Angebot</button>
-    </div>
-  }
-
-  <div id="map" class="hidden animate-bottom" appIntersectionObserver></div>
 </div>
+
 <app-footer></app-footer>

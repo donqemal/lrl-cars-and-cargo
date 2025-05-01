@@ -1,68 +1,197 @@
-<div class="container">
+<div class="head-container">
   <img src="assets/handshake.png" alt="Hand Schütteln" height="667" width="1000">
   <h1 class="animate-top" appIntersectionObserver>Ihr Auto schnell und einfach verkaufen!</h1>
 </div>
 
-<div class="wrapper">
-  <h1 class="animate-bottom" appIntersectionObserver>Angaben Fahrzeug / Person</h1>
-
-  <form class="form-container animate-bottom" appIntersectionObserver>
-    <div class="input-group">
-      <h2>Marke*:</h2>
-      <input [(ngModel)]="car.marke" [ngModelOptions]="{standalone: true}" placeholder="VW" type="text" required>
-
-      <h2>Modell*:</h2>
-      <input [(ngModel)]="car.modell" [ngModelOptions]="{standalone: true}" placeholder="Golf" type="text" required>
-
-      <h2>Jahrgang*:</h2>
-      <input [(ngModel)]="car.jahrgang" [ngModelOptions]="{standalone: true}" placeholder="2012" type="number" required>
-
-      <h2>Kilometerstand*:</h2>
-      <input [(ngModel)]="car.kilometerstand" [ngModelOptions]="{standalone: true}" placeholder="12'000" type="number"
-             required>
-
-      <h2>Zustand*:</h2>
-      <select [(ngModel)]="car.zustand" [ngModelOptions]="{standalone: true}" required>
-        <option value="Sehr Gut">Sehr gut</option>
-        <option value="Gut">Gut</option>
-        <option value="Mittelmässig">Mittelmässig</option>
-        <option value="Schlecht">Schlecht</option>
-        <option value="Sehr Schlecht">Sehr schlecht</option>
-      </select>
-
-      <h2>Kraftstoffart*:</h2>
-      <select [(ngModel)]="car.kraftstoffart" [ngModelOptions]="{standalone: true}" required>
-        <option value="Benzin">Benzin</option>
-        <option value="Diesel">Diesel</option>
-      </select>
+<div class="form-section">
+  <div class="container">
+    <div class="section-header animate-bottom" appIntersectionObserver>
+      <h2>Angaben Fahrzeug & Person</h2>
     </div>
 
-    <div class="input-group right">
-      <h2>Getriebe*:</h2>
-      <select [(ngModel)]="car.getriebe" [ngModelOptions]="{standalone: true}" required>
-        <option value="Automatik">Automatik</option>
-        <option value="Manuell">Manuell</option>
-      </select>
+    <div class="card animate-bottom" appIntersectionObserver>
+      <form class="form-container">
+        <div class="form-grid">
+          <div class="form-column">
+            <div class="form-group">
+              <label for="marke">Marke<span class="required">*</span></label>
+              <div class="input-container" [class.has-value]="car.marke">
+                <input
+                  id="marke"
+                  [(ngModel)]="car.marke"
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="z.B. VW"
+                  type="text"
+                  required>
+              </div>
+            </div>
 
-      <h2>Email*:</h2>
-      <input [(ngModel)]="car.email" [ngModelOptions]="{standalone: true}" placeholder="max.muster@mail.com" type="text"
-             required>
+            <div class="form-group">
+              <label for="modell">Modell<span class="required">*</span></label>
+              <div class="input-container" [class.has-value]="car.modell">
+                <input
+                  id="modell"
+                  [(ngModel)]="car.modell"
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="z.B. Golf"
+                  type="text"
+                  required>
+              </div>
+            </div>
 
-      <h2>Preisvorstellung (in CHF)*:</h2>
-      <input [(ngModel)]="car.preisvorstellung" [ngModelOptions]="{standalone: true}" placeholder="2000 - 4000"
-             type="text" required>
+            <div class="form-group">
+              <label for="jahrgang">Jahrgang<span class="required">*</span></label>
+              <div class="input-container" [class.has-value]="car.jahrgang">
+                <input
+                  id="jahrgang"
+                  [(ngModel)]="car.jahrgang"
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="z.B. 2012"
+                  type="number"
+                  required>
+              </div>
+            </div>
 
-      <h2>Bemerkungen:</h2>
-      <textarea [(ngModel)]="car.bemerkungen" [ngModelOptions]="{standalone: true}" placeholder="Bemerkungen"
+            <div class="form-group">
+              <label for="kilometerstand">Kilometerstand<span class="required">*</span></label>
+              <div class="input-container" [class.has-value]="car.kilometerstand">
+                <input
+                  id="kilometerstand"
+                  [(ngModel)]="car.kilometerstand"
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="z.B. 120000"
+                  type="number"
+                  required>
+                <span class="input-suffix">km</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-column">
+            <div class="form-group">
+              <label for="zustand">Zustand<span class="required">*</span></label>
+              <div class="select-container">
+                <select
+                  id="zustand"
+                  [(ngModel)]="car.zustand"
+                  [ngModelOptions]="{standalone: true}"
+                  required>
+                  <option value="Sehr Gut">Sehr gut</option>
+                  <option value="Gut">Gut</option>
+                  <option value="Mittelmässig">Mittelmässig</option>
+                  <option value="Schlecht">Schlecht</option>
+                  <option value="Sehr Schlecht">Sehr schlecht</option>
+                </select>
+                <div class="select-arrow">
+                  <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="kraftstoffart">Kraftstoffart<span class="required">*</span></label>
+              <div class="select-container">
+                <select
+                  id="kraftstoffart"
+                  [(ngModel)]="car.kraftstoffart"
+                  [ngModelOptions]="{standalone: true}"
+                  required>
+                  <option value="Benzin">Benzin</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="Elektro">Elektro</option>
+                  <option value="Hybrid">Hybrid</option>
+                </select>
+                <div class="select-arrow">
+                  <mat-icon>keyboard_arrow_down</mat-icon>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="getriebe">Getriebe<span class="required">*</span></label>
+              <div class="select-container">
+                <select
+                  id="getriebe"
+                  [(ngModel)]="car.getriebe"
+                  [ngModelOptions]="{standalone: true}"
+                  required>
+                  <option value="Automatik">Automatik</option>
+                  <option value="Manuell">Manuell</option>
+                </select>
+                <div class="select-arrow">
+                  <mat-icon>keyboard_arrow_down</mat-icon>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="preisvorstellung">Preisvorstellung<span class="required">*</span></label>
+              <div class="input-container" [class.has-value]="car.preisvorstellung">
+                <span class="input-prefix">CHF</span>
+                <input
+                  id="preisvorstellung"
+                  [(ngModel)]="car.preisvorstellung"
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="z.B. 2000 - 4000"
+                  type="text"
+                  required>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="full-width-fields">
+          <div class="form-group">
+            <label for="email">E-Mail Adresse<span class="required">*</span></label>
+            <div class="input-container" [class.has-value]="car.email"
+                 [class.invalid]="emailInput?.invalid && emailInput?.touched">
+              <input
+                id="email"
+                [(ngModel)]="car.email"
+                #emailInput="ngModel"
+                [ngModelOptions]="{standalone: true}"
+                placeholder="z.B. max.muster@mail.com"
+                type="email"
+                email
+                required>
+            </div>
+
+            @if (emailInput?.invalid && emailInput?.touched) {
+              <div class="error-message">
+                Bitte geben Sie eine gültige E-Mail-Adresse ein
+              </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="bemerkungen">Bemerkungen</label>
+            <div class="input-container textarea-container" [class.has-value]="car.bemerkungen">
+              <textarea
+                id="bemerkungen"
+                [(ngModel)]="car.bemerkungen"
+                [ngModelOptions]="{standalone: true}"
+                placeholder="Zusätzliche Informationen zu Ihrem Fahrzeug (optional)"
                 class="remarks"></textarea>
-    </div>
-  </form>
+            </div>
+          </div>
+        </div>
 
-  <div class="submit">
-    <button [disabled]="!checkFieldsFilled()" (click)="sendMail()">
-      <mat-icon fontIcon="send" style=""></mat-icon>
-      Senden
-    </button>
+        <div class="form-actions">
+          <button
+            type="button"
+            [disabled]="!checkFieldsFilled()"
+            (click)="sendMail()"
+            class="submit-button">
+              <span class="button-content">
+              <mat-icon fontIcon="send"></mat-icon>
+              <span>Anfrage senden</span>
+            </span>
+          </button>
+          <p class="form-hint">Alle mit <span class="required">*</span> markierten Felder sind Pflichtfelder</p>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+
 <app-footer></app-footer>
