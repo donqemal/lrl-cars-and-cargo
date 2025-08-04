@@ -16,6 +16,7 @@
                   type="text"
                   placeholder="z.B. Zürich"
                   #fromAdress
+                  (blur)="checkLocationFields()"
                   required
                 />
               </div>
@@ -31,6 +32,7 @@
                   type="text"
                   placeholder="z.B. Genf"
                   #toAdress
+                  (blur)="checkLocationFields()"
                   required
                 />
               </div>

@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, NgZone, ViewChild} from '@angular/core';
 import {FooterComponent} from "../../components/footer/footer.component";
 import {FormsModule} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
@@ -34,7 +34,12 @@ export class TransportComponent implements AfterViewInit {
   showFromAdress?: string;
   showToAdress?: string;
 
-  constructor(private toast: ToastrService, private router: Router, private dataService: DataService, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private toast: ToastrService,
+              private router: Router,
+              private dataService: DataService,
+              private changeDetectorRef: ChangeDetectorRef,
+              private ngZone: NgZone
+  ) {
   }
 
   ngAfterViewInit(): void {
@@ -95,9 +100,11 @@ export class TransportComponent implements AfterViewInit {
         this.toAdress.nativeElement.value = '';
         this.changeDetectorRef.detectChanges();
       } else {
-        this.toast.error('Einer der Standorte existiert nicht!', undefined, {positionClass: 'toast-top-center'});
-        this.fromAdress.nativeElement.value = '';
-        this.toAdress.nativeElement.value = '';
+        this.ngZone.run(() => {
+          this.toast.error('Einer der Standorte existiert nicht!', undefined, {positionClass: 'toast-top-center'});
+          this.fromAdress.nativeElement.value = '';
+          this.toAdress.nativeElement.value = '';
+        });
       }
     });
 
