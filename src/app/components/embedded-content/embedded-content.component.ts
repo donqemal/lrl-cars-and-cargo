@@ -12,7 +12,7 @@ export class EmbeddedContentComponent implements OnInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
-    this.loadScript('https://www.autoscout24.ch/MVC/Content/as24-hci-desktop/js/e.min.js');
+    this.loadScript('https://www.autoscout24.ch/assets/hci/v2/hci.current.js');
   }
 
   loadScript(src: string): void {
