@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   margin-top: 100px;
-  flex-direction: column;
 
   img {
     background-color: white;
@@ -40,13 +39,13 @@
 }
 
 .loader {
-  position: absolute;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 20px; // ✅ 20px below the image
-  z-index: 1; // optional, just to stay above background
+  margin: 100px 0 100px 0;
+  align-self: center;
 }
 
 .truckWrapper {

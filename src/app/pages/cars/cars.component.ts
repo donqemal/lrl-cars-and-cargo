@@ -17,10 +17,4 @@ import {IntersectionObserverDirective} from "../../directives/intersection-obser
 })
 
 export class CarsComponent {
-
-  finishedLoading() {
-    // select the spinner and remove it
-    const spinner = document.querySelector('.loader');
-    spinner?.remove();
-  }
 }
