@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
 ### Deploy to Github Pages
-Run `ng deploy --cname=www.lrl-cars-and-cargo.ch` and done!
+Run `ng deploy --cname=www.lrlcars.ch` and done!
 
 ## Development server
 

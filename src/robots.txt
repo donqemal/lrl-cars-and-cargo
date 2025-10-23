@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Disallow: /cgi-bin/
-Sitemap: https://lrl-cars-and-cargo.ch/sitemap.xml
+Sitemap: https://lrlcars.ch/sitemap.xml
