@@ -1,9 +1,12 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
+import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
 
 @Component({
   selector: 'app-embedded-content',
   standalone: true,
-  imports: [],
+  imports: [
+    IntersectionObserverDirective
+  ],
   templateUrl: './embedded-content.component.html',
   styleUrl: './embedded-content.component.scss'
 })
