@@ -1,7 +1,19 @@
-.google-widget {
+.review-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
-  margin: auto;
-  padding-top: 40px;
-  width: 100%;
-  overflow-x: hidden;
+  margin-bottom: -90px;
+  padding-bottom: 80px;
+
+  div {
+    width: 90%;
+    max-width: 1800px;
+    iframe {
+      background-color: white;
+      overflow-x: hidden;
+    }
+  }
 }
+
+
