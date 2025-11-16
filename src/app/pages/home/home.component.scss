@@ -7,6 +7,11 @@
   margin-bottom: -90px;
   padding-bottom: 80px;
 
+  ::ng-deep.reviews-widget__header {
+    position: relative;
+    z-index: 2;
+  }
+
   div {
     width: 90%;
     max-width: 1800px;
