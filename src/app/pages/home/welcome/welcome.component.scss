@@ -16,14 +16,14 @@
   }
 
   h1 {
-    font-family: 'Space Grotesk', sans-serif !important;
     letter-spacing: -.075em;
-    line-height: .88;
+    line-height: 1.05;
     margin: 0;
     font-size: clamp(64px, 14vw, 190px);
     max-width: 1050px;
 
     span {
+      font-family: 'Space Grotesk', sans-serif !important;
       display: inline-block;
       animation: wordUp .9s cubic-bezier(.16, 1, .3, 1) both;
     }
