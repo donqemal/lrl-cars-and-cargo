@@ -21,7 +21,7 @@
   <form class="contact-form reveal delay-1" (ngSubmit)="sendMail()" ngNativeValidate>
     <div class="form-group">
       <label>Vor- und Nachname*</label>
-      <input required name="name" [(ngModel)]="contactData.name" #nameInput="ngModel" placeholder="Ihr Name"/>
+      <input required name="name" [(ngModel)]="contactData.name" #nameInput="ngModel" placeholder="Max Muster"/>
       @if (nameInput?.invalid && nameInput?.touched) {
         <div class="error-message">
           Bitte geben Sie Ihren Vor- und Nachnamen ein
@@ -32,7 +32,7 @@
     <div class="form-group">
       <label>E-Mail*</label>
       <input required type="email" name="email" [(ngModel)]="contactData.email" #emailInput="ngModel"
-             placeholder="ihre@email.ch"/>
+             placeholder="max.muster@mail.com"/>
       @if (emailInput?.invalid && emailInput?.touched) {
         <div class="error-message">
           Bitte geben Sie eine gültige E-Mail-Adresse ein
