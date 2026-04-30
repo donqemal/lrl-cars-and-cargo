@@ -1,17 +1,79 @@
-<div class="car-banner-container hidden animate-bottom" appIntersectionObserver>
-  <div class="banner">
-    <img src="assets/car.png" alt="Auto">
-    <div class="content">
-      <h2>Fahrzeuge nach individuellen Anforderungen</h2>
-      <ul>
-        <li>Verkauf von gut gepflegten und maximal erhaltener Occasion-Fahrzeuge</li>
-        <li>Spezifische Anfragen für weltbekannte Marken und Modelle</li>
-      </ul>
+<section class="section about light">
+  <div class="big-statement reveal split-text">Wir verbinden Menschen mit Autos — getragen von Vertrauen, angetrieben
+    durch Erfahrung.
+  </div>
+  <p class="about-copy reveal delay-1">LRL Cars steht für persönliche Beratung, schnelle Kommunikation und ein Netzwerk,
+    das passende Fahrzeuge sichtbar macht. Ob Occasion, SUV oder Exportfahrzeug: Wir begleiten Sie transparent bis zur
+    Übergabe.</p>
+</section>
+
+<section id="contact" class="section contact dark">
+  <div class="contact-text reveal">
+    <p class="eyebrow">Kontakt / 05</p>
+    <h2 class="split-text">Suchst du dein nächstes Fahrzeug?</h2>
+    <p>Schreib uns, was du suchst — wir melden uns schnellstmöglich.</p>
+    <div class="contact-lines">
+      <a href="tel:+41766291070" class="contact-link">+41 76 629 10 70</a>
+      <a href="mailto:info@lrl-cars-cargo.ch" class="contact-link">info&#64;lrl-cars-cargo.ch</a>
+      <span>Schaffhausen · Switzerland</span>
     </div>
   </div>
+  <form class="contact-form reveal delay-1" (ngSubmit)="sendMail()" ngNativeValidate>
+    <div class="form-group">
+      <label>Vor- und Nachname*</label>
+      <input required name="name" [(ngModel)]="contactData.name" #nameInput="ngModel" placeholder="Ihr Name"/>
+      @if (nameInput?.invalid && nameInput?.touched) {
+        <div class="error-message">
+          Bitte geben Sie Ihren Vor- und Nachnamen ein
+        </div>
+      }
+    </div>
 
-  <div style="width: 100%;">
-    <app-benefits></app-benefits>
-    <app-swipe-images></app-swipe-images>
-  </div>
-</div>
+    <div class="form-group">
+      <label>E-Mail*</label>
+      <input required type="email" name="email" [(ngModel)]="contactData.email" #emailInput="ngModel"
+             placeholder="ihre@email.ch"/>
+      @if (emailInput?.invalid && emailInput?.touched) {
+        <div class="error-message">
+          Bitte geben Sie eine gültige E-Mail-Adresse ein
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Telefonnummer</label>
+      <input name="phone" [(ngModel)]="contactData.phone" #phoneInput="ngModel" type="tel" placeholder="+41 79 123 45 67"
+             pattern="^(0|(\+41\s?))((7[5-9])|(8[1-9]))\s?\d{3}\s?\d{2}\s?\d{2}$"/>
+      @if (phoneInput?.invalid && phoneInput?.touched) {
+        <div class="error-message">
+          Bitte geben Sie eine gültige Telefonnummer ein (z.B. +41 79 123 45 67)
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Wunschfahrzeug*</label>
+      <input required name="car" [(ngModel)]="contactData.car" #carInput="ngModel" placeholder="z.B. Audi RS6"/>
+      @if (carInput?.invalid && carInput?.touched) {
+        <div class="error-message">
+          Bitte geben Sie Ihr Wunschfahrzeug an
+        </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Budget</label>
+      <input name="budget" [(ngModel)]="contactData.budget" placeholder="z.B. 50'000 CHF"/>
+    </div>
+
+    <div class="form-group">
+      <label>Nachricht</label>
+      <textarea name="message" [(ngModel)]="contactData.message" placeholder="Ihre Nachricht..." rows="5"></textarea>
+    </div>
+
+    <div class="form-footer">
+      <button class="btn magnetic" type="submit"><span>Anfrage senden</span></button>
+      <p class="hint">* Pflichtfelder</p>
+    </div>
+  </form>
+</section>

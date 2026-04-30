@@ -1,22 +1,59 @@
-header {
-  top: 0 !important;
+.loader {
   position: fixed;
-  width: 100%;
-  z-index: 100 !important;
-  background-color: white;
+  inset: 0;
+  background: #050505;
+  z-index: 220;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  place-items: center;
+  pointer-events: none;
+  animation: loaderGone .55s cubic-bezier(.16, 1, .3, 1) .75s forwards;
 
-  img {
-    height: 100px;
-    justify-self: flex-start;
-    position: relative;
-    left: 5%;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0;
+    background: var(--red);
+    animation: loadBar .75s cubic-bezier(.16, 1, .3, 1) forwards;
   }
 
-  img:hover {
-    cursor: pointer;
+  span {
+    font: 900 clamp(54px, 14vw, 190px)/1 Space Grotesk;
+    letter-spacing: -.09em;
+    color: #fff;
+    clip-path: inset(0 100% 0 0);
+    animation: loaderText .65s cubic-bezier(.16, 1, .3, 1) .08s forwards;
+  }
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: .055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.cursor {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 199;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: .08s;
+
+  &.big {
+    width: 76px;
+    height: 76px;
+    background: rgba(227, 6, 19, .18);
+    transition: width .25s, height .25s, background .25s;
   }
 }
 
@@ -24,63 +61,74 @@ header {
   display: flex;
   align-items: center;
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: white;
-  height: 85px;
-  width: 85px;
+  bottom: 30px;
+  right: 30px;
+  background-color: whitesmoke;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
-  z-index: 3;
+  z-index: 150;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: .3s;
+  animation: pulsate 2s infinite;
 
   img {
-    height: 60px;
+    height: 34px;
     margin: 0 auto;
   }
 }
 
-.contact-circle-container:hover {
-  cursor: pointer;
-}
-
 @keyframes pulsate {
   0% {
-    border-color: rgba(0, 0, 0, 0.2);
     transform: scale(1);
   }
   50% {
-    border-color: rgba(0, 0, 0, 0.5);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   100% {
-    border-color: rgba(0, 0, 0, 0.2);
     transform: scale(1);
   }
 }
 
-.shadow {
-  transition: all 1s;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  z-index: 5;
+@keyframes loadBar {
+  to {
+    width: 100%
+  }
 }
 
-.contact-circle-container {
-  animation: pulsate 2s infinite;
+@keyframes loaderText {
+  to {
+    clip-path: inset(0 0 0 0)
+  }
 }
 
-@media screen and (max-width: 768px) {
-  header {
-    img {
-      height: 90px;
-    }
+@keyframes loaderGone {
+  to {
+    opacity: 0;
+    visibility: hidden
+  }
+}
+
+@media (max-width: 980px) {
+  .desktop-nav, .site-header .btn.small {
+    display: none;
+  }
+  .site-header {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    top: 10px;
+    width: calc(100% - 20px);
+  }
+  .cursor {
+    display: none;
   }
   .contact-circle-container {
-    bottom: 25px;
-    left: 15px;
-    height: 58px;
-    width: 58px;
-
-    img {
-      height: 40px;
-    }
+    bottom: 20px;
+    right: 20px;
   }
 }

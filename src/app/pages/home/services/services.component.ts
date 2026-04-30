@@ -12,4 +12,5 @@ import {IntersectionObserverDirective} from "../../../directives/intersection-ob
 })
 export class ServicesComponent {
 
+    protected readonly window = window;
 }

@@ -1,13 +1,22 @@
-$primary-color: #d2042d;
-$primary-hover: #e81e3e;
-$primary-dark: #b00025;
-$text-dark: #333333;
-$text-light: #ffffff;
-$text-muted: #6c757d;
-$border-color: #e0e0e0;
-$background-light: #ffffff;
-$background-dark: #f8f9fa;
+$primary-color: #e30613;
+$primary-hover: #ff0718;
+$primary-dark: #b5050f;
+$text-dark: #050505;
+$text-light: #f8f8f4;
+$text-muted: #a8a8a2;
+$border-color: rgba(255, 255, 255, .15);
+$background-light: #f8f8f4;
+$background-dark: #050505;
 $error-color: #dc3545;
 $success-color: #28a745;
 $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 $transition: all 0.3s ease;
+
+:root {
+  --black: #050505;
+  --white: #f8f8f4;
+  --red: #e30613;
+  --muted: #a8a8a2;
+  --line: rgba(255, 255, 255, .15);
+  --dark-line: rgba(0, 0, 0, .12)
+}

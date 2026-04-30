@@ -1,14 +1,11 @@
-<header #header>
-  <img src="assets/logo.svg"
-       class="animate-bottom"
-       alt="LRL Logo"
-       routerLink=""
-       (click)="changeRoute()"
-       appIntersectionObserver>
-  <app-navigation></app-navigation>
-</header>
+<div class="loader" aria-hidden="true" #loader><span>LRL</span></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true" #cursor></div>
+
+<app-navigation></app-navigation>
+
+<router-outlet #outlet="outlet" (activate)="changeRoute()"></router-outlet>
 
 <div class="contact-circle-container" (click)="contactLRLPerWhatsapp()">
-  <img src="assets/whatsapp.png" alt="Whatsapp Logo" height="300">
+  <img src="assets/whatsapp.png" alt="Whatsapp Logo" height="60">
 </div>
-<router-outlet #outlet="outlet" (activate)="changeRoute()"></router-outlet>

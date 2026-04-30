@@ -1,25 +1,180 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import 'styles/variables';
 @import 'styles/mixins';
 
-body {
-  margin: 0 !important;
-  background: url("assets/pattern.jpeg") repeat;
-  background-size: 50%;
-}
-
 * {
-  font-family: 'Montserrat', serif !important;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
   --swiper-theme-color: white;
   --swiper-navigation-size: 40px;
 }
 
-html, body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 !important;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: #fff;
+  border-radius: 999px;
+  padding: 15px 24px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  transition: .35s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: translateY(101%);
+  transition: .35s;
+}
+
+.btn:hover {
+  color: #050505;
+  transform: translateY(-2px);
+}
+
+.btn:hover:before {
+  transform: translateY(0);
+}
+
+.btn span, .btn {
+  isolation: isolate;
+}
+
+.btn.small {
+  padding: 11px 18px;
+  font-size: 13px;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, .35);
+}
+
+.btn.ghost:hover {
+  border-color: #fff;
+  color: #050505;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 120px max(28px, calc((100vw - 1180px) / 2));
+  position: relative;
+}
+
+.dark {
+  background: #050505;
+  color: #fff;
+}
+
+.light {
+  background: #f8f8f4;
+  color: #050505;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 900;
+  margin: 0 0 24px;
+}
+
+h1, .section h2 {
+  font-family: Space Grotesk, Inter, sans-serif !important;
+  letter-spacing: -.075em;
+  line-height: .88;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(64px, 12vw, 180px);
+}
+
+p {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.5;
+  color: #d8d8d2;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(70px);
+  filter: blur(8px);
+  transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1), filter .9s cubic-bezier(.16, 1, .3, 1);
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+.delay-1 {
+  transition-delay: .12s;
+}
+
+.delay-2 {
+  transition-delay: .24s;
+}
+
+.split-line {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.split-line > span {
+  display: inline-block;
+  transform: translateY(115%) rotate(2deg);
+  transition: transform .9s cubic-bezier(.16, 1, .3, 1);
+}
+
+.visible .split-line > span, .split-text.visible .split-line > span {
+  transform: translateY(0) rotate(0);
+}
+
+.split-line:nth-child(3n) > span {
+  transition-delay: .05s;
+}
+
+.split-line:nth-child(3n+1) > span {
+  transition-delay: .1s;
 }
 
 mat-icon {

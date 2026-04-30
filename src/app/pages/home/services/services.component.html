@@ -1,55 +1,56 @@
-<div class="container">
-  <h1>Kundenerlebnis</h1>
-  <div class="car-container">
-    <div class="bullets">
-      <div class="bullet">
-        <div class="text" style="text-align: end">
-          Verkauf
-          <p>Finden Sie jetzt Ihr Traumauto!</p>
-        </div>
-        <div class="number left">1</div>
-      </div>
-      <div class="bullet">
-        <div class="text" style="text-align: end">
-          Ankauf
-          <p>Wir kaufen Ihr Auto zum Bestpreis!</p>
-        </div>
-        <div class="number left">2</div>
-      </div>
-      <div class="bullet">
-        <div class="text" style="text-align: end">
-          Unschlagbare Preise
-          <p>Die besten Preise auf dem Markt!</p>
-        </div>
-        <div class="number left">3</div>
-      </div>
-    </div>
-    <img src="assets/car_top.png" alt="Top Image"
-         class="car-top animate-bottom-slow"
-         height="2048" width="1032"
-         appIntersectionObserver>
-    <div class="bullets bottom">
-      <div class="bullet end same-line">
-        <div class="number right">4</div>
-        <div class="text">
-          Probefahrt
-          <p>Probefahren unserer Autos!</p>
-        </div>
-      </div>
-      <div class="bullet end">
-        <div class="number right">5</div>
-        <div class="text">
-          Transport
-          <p>Transport Ihres Autos zu Ihnen nach Hause!</p>
-        </div>
-      </div>
-      <div class="bullet end">
-        <div class="number right">6</div>
-        <div class="text">
-          Support
-          <p>Unterstützung bei allen Fragen rund um Ihr Auto!</p>
-        </div>
-      </div>
-    </div>
+<section id="services" class="section services light">
+  <div class="section-head reveal">
+    <p class="eyebrow">Unsere Leistungen / 03</p>
+    <h2 class="split-text">Alles rund um den Fahrzeughandel.</h2>
   </div>
-</div>
+  <div class="service-grid">
+    <article class="service reveal"><span>01</span>
+      @if (window.innerWidth > 1100) {
+        <h3>Fahrzeug- beschaffung</h3>
+      } @else {
+        <h3>Fahrzeugbeschaffung</h3>
+      }
+      <p>Wir suchen gezielt nach dem passenden Fahrzeug — in der Schweiz und in Europa.</p></article>
+    <article class="service reveal"><span>02</span>
+      <h3>Verkauf & Ankauf</h3>
+      <p>Faire Bewertung, klare Kommunikation und schnelle Abwicklung.</p></article>
+    <article class="service reveal"><span>03</span>
+      <h3>Import / Export</h3>
+      <p>Unterstützung bei Dokumenten, Transport und Übergabe.</p></article>
+    <article class="service reveal"><span>04</span>
+      <h3>Finanzierung</h3>
+      <p>Auf Wunsch mit passenden Leasing- oder @if (window.innerWidth > 1100) {
+        Finanzierungs- möglichkeiten.
+      } @else {
+        Finanzierungsmöglichkeiten.
+      }</p></article>
+    <article class="service reveal"><span>05</span>
+      <h3>Kontrolle & Lieferung</h3>
+      <p>Besichtigung, technische Prüfung und Übergabe mit sauberem Ablauf.</p></article>
+  </div>
+</section>
+
+<section id="process" class="section process dark">
+  <div class="marquee">
+    <span>Smarter suchen · Besser fahren · LRL Cars · </span>
+    <span>Smarter suchen · Besser fahren · LRL Cars · </span>
+  </div>
+  <div class="section-head reveal">
+    <p class="eyebrow">Arbeitsweise / 04</p>
+    <h2 class="split-text">Vom Wunschfahrzeug zur Übergabe.</h2>
+  </div>
+  <div class="timeline">
+    <article class="step reveal"><b>01</b>
+      <h3>Beratung</h3>
+      <p>Wir klären Modell, Budget, Ausstattung und Zeitrahmen.</p></article>
+    <article class="step reveal"><b>02</b>
+      <h3>Suche</h3>
+      <p>Wir prüfen Markt, Händlernetzwerk und passende Angebote.</p></article>
+    <article class="step reveal"><b>03</b>
+      <h3>Prüfung</h3>
+      <p>Dokumente, Zustand und Historie werden sorgfältig kontrolliert.</p></article>
+    <article class="step reveal"><b>04</b>
+      <h3>Übergabe</h3>
+      <p>Saubere Übergabe, Export/Import-Support und After-Sales-Kontakt.</p></article>
+  </div>
+</section>

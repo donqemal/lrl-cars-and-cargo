@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {FormsModule, NgModel, ReactiveFormsModule} from "@angular/forms";
 import { KeyValuePipe, NgClass } from "@angular/common";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
@@ -32,7 +32,7 @@ import {IntersectionObserverDirective} from "../../directives/intersection-obser
   templateUrl: './sell.component.html',
   styleUrl: './sell.component.scss',
 })
-export class SellComponent {
+export class SellComponent implements AfterViewInit {
   @ViewChild('emailInput') emailInput!: NgModel;
 
   car: Car = {
@@ -44,6 +44,7 @@ export class SellComponent {
     kraftstoffart: 'Benzin',
     getriebe: 'Automatik',
     email: '',
+    phone: '',
     preisvorstellung: null,
     bemerkungen: ''
   };
@@ -51,7 +52,15 @@ export class SellComponent {
   constructor(private http: HttpClient, private toast: ToastrService) {
   }
 
+  ngAfterViewInit() {
+    // Trigger global reveal logic
+    window.dispatchEvent(new Event('scroll'));
+  }
+
   sendMail() {
+    if (!this.checkFieldsFilled()) {
+      return;
+    }
     let url = "https://formspree.io/f/mwkgzelo";
 
     const httpOptions = {
@@ -70,6 +79,7 @@ export class SellComponent {
       Kraftstoffart=${this.car.kraftstoffart}&
       Getriebe=${this.car.getriebe}&
       Email=${this.car.email}&
+      Telefon=${this.car.phone}&
       Preisvorstellung=${this.car.preisvorstellung}&
       Bemerkungen=${this.car.bemerkungen}`;
 
@@ -85,6 +95,7 @@ export class SellComponent {
           kraftstoffart: 'Benzin',
           getriebe: 'Automatik',
           email: '',
+          phone: '',
           preisvorstellung: null,
           bemerkungen: ''
         }
@@ -97,11 +108,12 @@ export class SellComponent {
   }
 
   checkFieldsFilled() {
+    const isPhoneNumberValid = /^(0|(\+41\s?))((7[5-9])|(8[1-9]))\s?\d{3}\s?\d{2}\s?\d{2}$/.test(this.car.phone);
     const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.car.email);
     const areOtherFieldsFilled = Object.keys(this.car)
       .filter(key => key !== 'bemerkungen')
       .every(key => (this.car as any)[key]);
 
-    return isEmailValid && areOtherFieldsFilled;
+    return isPhoneNumberValid && isEmailValid && areOtherFieldsFilled;
   }
 }

@@ -1,191 +1,223 @@
-.welcome-container {
-  margin-top: 100px;
+.hero {
   display: flex;
-  flex-direction: column;
-  text-align: center;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
-  height: auto;
-  position: relative;
 
-  .parallax {
-    position: relative;
-    height: calc(100vh - 100px);
-    width: 100%;
-    overflow: hidden;
-
-    .parallax-img {
-      background-color: white;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-      animation: smoothZoom 5.5s;
-    }
-  }
-
-  .content {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+  &-bg {
     position: absolute;
-    top: 120px;
+    inset: 0;
+    overflow: hidden;
   }
 
-  @keyframes smoothZoom {
-    0% {
-      scale: 1.6;
-    }
-    100% {
-      scale: 1;
-    }
+  &-content {
+    max-width: 980px;
+    position: relative;
+    z-index: 2;
   }
 
   h1 {
-    font-family: "Bebas Neue", serif !important;
-    color: white;
-    letter-spacing: 1.7px;
-    line-height: 70px;
-    font-size: 80px;
-    font-weight: 700;
-    position: absolute;
-    width: 90%;
-    margin-top: -40px;
-    animation-delay: 1.5s;
+    font-family: 'Space Grotesk', sans-serif !important;
+    letter-spacing: -.075em;
+    line-height: .88;
+    margin: 0;
+    font-size: clamp(64px, 14vw, 190px);
+    max-width: 1050px;
+
+    span {
+      display: inline-block;
+      animation: wordUp .9s cubic-bezier(.16, 1, .3, 1) both;
+    }
   }
 
-  .cars-container {
-    position: absolute;
+  .lead {
+    font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.4;
+    color: #d8d8d2;
+    max-width: 750px;
+    margin: 28px 0;
+  }
+
+  .actions {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 150px;
-    animation-delay: 2s;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 60% 45%, #000, transparent 72%);
+  animation: gridDrift 16s linear infinite;
+}
+
+.glow {
+  position: absolute;
+  width: 36vw;
+  height: 36vw;
+  background: radial-gradient(circle, rgba(227, 6, 19, .38), transparent 45%);
+  filter: blur(20px);
+  animation: float 9s ease-in-out infinite;
+
+  &.one {
+    right: 8%;
+    top: 18%;
   }
 
-  .buy-car {
-    text-wrap: nowrap;
-    background-color: #D5302B;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 26px;
-    cursor: pointer;
-    top: 270px;
-    left: 20px;
-    width: 250px;
-    height: 60px;
-    transition: 0.3s;
+  &.two {
+    left: -12%;
+    bottom: -10%;
+    animation-delay: -3s;
+  }
+}
+
+.hero-panel {
+  position: absolute;
+  right: max(28px, calc((100vw - 1180px) / 2));
+  top: 135px;
+  z-index: 3;
+  width: 260px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 18px;
+  background: rgba(255, 255, 255, .04);
+  backdrop-filter: blur(16px);
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+
+    &:last-child {
+      border: 0;
+    }
   }
 
-  .buy-car:hover {
-    background-color: #f30333;
-    transition: 0.3s;
-    scale: 1.035;
+  strong {
+    color: var(--red);
+    font-size: 30px;
   }
 
-  .sell-car {
-    text-wrap: nowrap;
-    background-color: white;
-    color: #D5302B;
-    border: 1.5px solid #D5302B;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 26px;
-    cursor: pointer;
-    top: 270px;
-    right: 20px;
-    width: 250px;
-    height: 60px;
-    transition: 0.3s;
+  span {
+    color: #c9c9c1;
+    font-size: 13px;
+    text-align: right;
   }
+}
 
-  .sell-car:hover {
-    background-color: #cbcbcb;
-    transition: 0.3s;
-    scale: 1.035;
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+
+  h2 {
+    font-size: clamp(48px, 8vw, 116px);
   }
+}
 
-  .arrow {
-    animation-delay: 3.5s;
-    position: absolute;
-    bottom: 75px;
-    z-index: 1;
-    cursor: pointer;
-  }
+.pill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 70px;
 
-  .arrow span {
-    display: block;
-    width: 25px;
-    height: 25px;
-    border-bottom: 5px solid red;
-    border-right: 5px solid red;
-    transform: rotate(45deg);
-    margin: auto auto -15px auto;
-    animation: arrow 2s infinite;
-  }
+  span {
+    border: 1px solid var(--dark-line);
+    border-radius: 999px;
+    padding: 20px;
+    text-align: center;
+    font-weight: 800;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color .35s;
 
-  .arrow span:nth-child(2) {
-    animation-delay: -0.2s;
-  }
-
-  .arrow span:nth-child(3) {
-    animation-delay: -0.4s;
-  }
-
-  @keyframes arrow {
-    0% {
-      opacity: 0;
-      transform: rotate(45deg) translate(-20px, -20px);
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--red);
+      transform: translateY(105%);
+      transition: .5s cubic-bezier(.16, 1, .3, 1);
+      z-index: -1;
     }
 
-    50% {
-      opacity: 1;
-    }
+    &:hover {
+      color: #fff;
 
-    100% {
-      opacity: 0;
-      transform: rotate(45deg) translate(20px, 20px);
+      &:before {
+        transform: none;
+      }
     }
   }
 }
 
-@media screen and (max-width: 768px) {
-  .welcome-container {
-    margin-top: 90px;
-    h1 {
-      font-size: 52px;
-      line-height: 50px;
-    }
-
-    .parallax {
-      height: calc(100vh - 90px);
-    }
+@keyframes gridDrift {
+  to {
+    transform: translate3d(72px, 72px, 0)
   }
-  .cars-container {
-    width: 95vw;
+}
 
-    .buy-car {
-      text-wrap: pretty;
-      font-size: 20px;
-      width: 190px;
-      height: auto;
-      padding: 15px 0 !important;
-    }
+@keyframes float {
+  50% {
+    transform: translate3d(-5%, 6%, 0) scale(1.08)
+  }
+}
 
-    .sell-car {
-      text-wrap: pretty;
-      font-size: 20px;
-      width: 190px;
-      height: auto;
-      padding: 15px 0 !important;
-    }
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(140px)
+  }
+  to {
+    opacity: .9;
+    transform: none
+  }
+}
+
+@keyframes wordUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%)
+  }
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-panel {
+    top: unset;
+    bottom: 70px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .pill-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero h1 {
+    font-size: clamp(62px, 18vw, 120px);
+  }
+}
+
+@media (max-width: 640px) {
+  .pill-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-panel {
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%)  !important;
+  }
+  .hero {
+    align-items: flex-start;
+    padding-bottom: 110px;
   }
 }

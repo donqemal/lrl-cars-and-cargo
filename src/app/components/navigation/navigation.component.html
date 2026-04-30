@@ -1,22 +1,27 @@
-<div class="navigation-container">
-  <a routerLink="/" [class.active]="selectedNavItem === '/'">Home</a>
-  <a routerLink="über-uns" [class.active]="selectedNavItem === '/%C3%BCber-uns'">Über uns</a>
-  <a routerLink="fahrzeuge" [class.active]="selectedNavItem === '/fahrzeuge'">Fahrzeuge</a>
-  <a routerLink="verkaufen" [class.active]="selectedNavItem === '/verkaufen'">Auto verkaufen</a>
-  <a routerLink="transport" [class.active]="selectedNavItem === '/transport'">Cargo Transport</a>
-</div>
+<header class="site-header" id="top" #header [class.scrolled]="scrolled" [class.menu-open]="menuOpen">
+  <a class="brand" (click)="scrollToTop($event)" style="cursor: pointer;" aria-label="LRL Cars Startseite">
+    <img alt="Logo" src="assets/logo.svg">
+  </a>
+  <nav class="desktop-nav" aria-label="Hauptnavigation">
+    <a routerLink="/über-uns" routerLinkActive="active">Über uns</a>
+    <a routerLink="/fahrzeuge" routerLinkActive="active">Fahrzeuge</a>
+    <a routerLink="/verkaufen" routerLinkActive="active">Verkaufen</a>
+    <a routerLink="/transport" routerLinkActive="active">Transport</a>
+    <a routerLink="/" fragment="contact" [class.active]="contactActive">Kontakt</a>
+  </nav>
+  <a class="btn small magnetic" routerLink="/" fragment="contact"><span>Auto finden</span></a>
+  <button class="menu-btn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav" (click)="toggleMenu()" [class.active]="menuOpen">
+    <span></span><span></span>
+  </button>
+</header>
 
-<div class="mobile-navigation-container">
-  @if (mobileNavigationVisible) {
-  <mat-icon fontIcon="close" (click)="toggleMobileNavigation()"></mat-icon>
-  } @else {
-  <mat-icon fontIcon="menu" (click)="toggleMobileNavigation()"></mat-icon>
-  }
-  <div class="mobile-navigation" [ngClass]="mobileNavigationVisible ? 'animate' : 'hide'">
-    <a (click)="navigatePage('/')" [class.active]="selectedNavItem === '/'">Home</a>
-    <a (click)="navigatePage('/über-uns')" [class.active]="selectedNavItem === '/%C3%BCber-uns'">Über uns</a>
-    <a (click)="navigatePage('/fahrzeuge')" [class.active]="selectedNavItem === '/fahrzeuge'">Fahrzeuge</a>
-    <a (click)="navigatePage('/verkaufen')" [class.active]="selectedNavItem === '/verkaufen'">Auto verkaufen</a>
-    <a (click)="navigatePage('/transport')" [class.active]="selectedNavItem === '/transport'">Cargo Transport</a>
-  </div>
-</div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation" [class.open]="menuOpen">
+  <button class="close-menu" type="button" aria-label="Menü schliessen" (click)="toggleMenu(false)">
+    <span></span><span></span>
+  </button>
+  <a routerLink="/über-uns" routerLinkActive="active" (click)="toggleMenu(false)">Über uns</a>
+  <a routerLink="/fahrzeuge" routerLinkActive="active" (click)="toggleMenu(false)">Fahrzeuge</a>
+  <a routerLink="/verkaufen" routerLinkActive="active" (click)="toggleMenu(false)">Verkaufen</a>
+  <a routerLink="/transport" routerLinkActive="active" (click)="toggleMenu(false)">Transport</a>
+  <a routerLink="/" fragment="contact" [class.active]="contactActive" (click)="toggleMenu(false)">Kontakt</a>
+</nav>

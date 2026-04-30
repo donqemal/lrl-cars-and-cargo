@@ -49,6 +49,8 @@ export class TransportComponent implements AfterViewInit {
       center: {lat: 47, lng: 8.3417},
       zoom: 7
     });
+    // Trigger global reveal logic
+    window.dispatchEvent(new Event('scroll'));
   }
 
 
@@ -92,20 +94,19 @@ export class TransportComponent implements AfterViewInit {
       destination: destination,
       travelMode: TravelMode.DRIVING
     }, (response: any, status: any) => {
-      if (status === 'OK') {
-        directionsRenderer.setDirections(response);
-        this.showFromAdress = this.fromAdress.nativeElement.value;
-        this.showToAdress = this.toAdress.nativeElement.value;
-        this.fromAdress.nativeElement.value = '';
-        this.toAdress.nativeElement.value = '';
-        this.changeDetectorRef.detectChanges();
-      } else {
-        this.ngZone.run(() => {
+      this.ngZone.run(() => {
+        if (status === 'OK') {
+          directionsRenderer.setDirections(response);
+          this.showFromAdress = this.fromAdress.nativeElement.value;
+          this.showToAdress = this.toAdress.nativeElement.value;
+          this.fromAdress.nativeElement.value = '';
+          this.toAdress.nativeElement.value = '';
+        } else {
           this.toast.error('Einer der Standorte existiert nicht!', undefined, {positionClass: 'toast-top-center'});
           this.fromAdress.nativeElement.value = '';
           this.toAdress.nativeElement.value = '';
-        });
-      }
+        }
+      });
     });
 
     const service = new google.maps.DistanceMatrixService();
@@ -116,13 +117,15 @@ export class TransportComponent implements AfterViewInit {
         travelMode: TravelMode.DRIVING,
       },
       (response: any, status: any) => {
-        if (status === 'OK') {
-          this.distance = response.rows[0].elements[0].distance.text;
-          const distance = response.rows[0].elements[0].distance.value / 1000;
-          this.price = Math.round(distance <= 250 ? distance * 1.7 : distance * 1.5);
-        } else {
-          this.toast.error('Die Distanz konnte nicht berechnet werden!', undefined, {positionClass: 'toast-top-center'});
-        }
+        this.ngZone.run(() => {
+          if (status === 'OK') {
+            this.distance = response.rows[0].elements[0].distance.text;
+            const distance = response.rows[0].elements[0].distance.value / 1000;
+            this.price = Math.round(distance <= 250 ? distance * 1.7 : distance * 1.5);
+          } else {
+            this.toast.error('Die Distanz konnte nicht berechnet werden!', undefined, {positionClass: 'toast-top-center'});
+          }
+        });
       }
     );
   }

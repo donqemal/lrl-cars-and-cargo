@@ -1,33 +1,44 @@
-<div class="wrapper">
-  <h1 class="animate-top" appIntersectionObserver>Ihr vertrauenswürdiger Partner für Occasionen und Oldtimer!</h1>
+<section class="section dark">
+  <div class="hero-bg">
+    <div class="grid"></div>
+    <div class="glow two"></div>
+  </div>
+  <div class="section-head reveal">
+    <p class="eyebrow">Der menschliche Faktor / 01</p>
+    <h1 class="split-text">Vertrauen. Erfahrung. Leidenschaft.</h1>
+  </div>
 
-  <h3 class="animate-bottom" appIntersectionObserver>
-    Mein Name ist Lirjon Osmani, und ich bringe über 5 Jahre Erfahrung im Handel mit
-    Occasionen mit. Meine Leidenschaft für Autos und mein Engagement für meine Kunden sind das Herzstück meiner Arbeit.
-    <br><br>
-    Ich weiss aus eigener Erfahrung, wie herausfordernd der Autokauf sein kann. Als begeisterter Autosammler und
-    Verkäufer
-    verstehe ich die Bedürfnisse meiner Kunden genau. Ich habe unzählige Fahrzeuge verkauft und besitze selbst eine
-    Sammlung, die ich mit grosser Sorgfalt und Begeisterung pflege.
-    <br><br>
-    Mein Ziel ist es, Ihnen nicht nur ein Auto zu verkaufen, sondern Ihnen ein einzigartiges Erlebnis zu bieten. Ich
-    stehe
-    Ihnen mit Rat und Tat zur Seite, damit Sie das perfekte Auto finden, das zu Ihnen und Ihrem Lebensstil passt. Ich
-    bin
-    stolz darauf, Ihnen eine breite Auswahl an hochwertigen Occasionen anbieten zu können, die sorgfältig geprüft und
-    ausgewählt wurden.
-    <br><br>
-    Bei mir steht der Kunde immer im Mittelpunkt. Ich bin hier, um Ihre Fragen zu beantworten, Bedenken zu beseitigen
-    und
-    sicherzustellen, dass Ihr Autokauf reibungslos verläuft. Ich freue mich darauf, Sie auf Ihrem Weg zum nächsten Auto
-    zu
-    begleiten und Ihnen ein unvergleichliches Einkaufserlebnis zu bieten.
-  </h3>
-</div>
-@if (window.innerWidth <= 768) {
-  <img src="assets/about-us-mobile.png" alt="Zeitspanne über uns" class="about-us-mobile" height="774" width="673">
-} @else {
-  <img src="assets/about-us.png" alt="Zeitspanne über uns" class="about-us" height="508" width="1755">
-}
+  <div class="about-grid">
+    <div class="about-content reveal delay-1">
+      <p style="font-family: 'Space Grotesk', sans-serif;" class="lead">Wir bei LRL bringen über 5 Jahre Erfahrung im Handel mit
+        Occasionen mit. Unsere Leidenschaft für Autos und unser Engagement für die Kunden sind das Herzstück unserer
+        Arbeit.</p>
+
+      <div class="about-image-container reveal delay-2">
+        @if (window.innerWidth <= 768) {
+          <img src="assets/about-us-mobile.png" alt="Zeitspanne über uns" class="about-img">
+        } @else {
+          <img src="assets/about-us.png" alt="Zeitspanne über uns" class="about-img">
+        }
+      </div>
+
+
+      <div class="about-text">
+        <p>Wir wissen aus eigener Erfahrung, wie herausfordernd der Autokauf sein kann. Als begeistertere Autosammler und
+          Verkäufer verstehen wir die Bedürfnisse unserer Kunden genau. Wir habe unzählige Fahrzeuge verkauft und besitzen
+          selbst eine Sammlung, die wir mit grosser Sorgfalt und Begeisterung pflegen.</p>
+
+        <p>Unser Ziel ist es, Ihnen nicht nur ein Auto zu verkaufen, sondern Ihnen ein einzigartiges Erlebnis zu bieten.
+          Wir stehen Ihnen mit Rat und Tat zur Seite, damit Sie das perfekte Auto finden, das zu Ihnen und Ihrem
+          Lebensstil passt. Wir sind stolz darauf, Ihnen eine breite Auswahl an hochwertigen Occasionen anbieten zu
+          können, die sorgfältig geprüft und ausgewählt wurden.</p>
+
+        <p>Bei uns steht der Kunde immer im Mittelpunkt. Wir bin hier, um Ihre Fragen zu beantworten, Bedenken zu
+          beseitigen und sicherzustellen, dass Ihr Autokauf reibungslos verläuft. Wir freuen mich darauf, Sie auf Ihrem
+          Weg zum nächsten Auto zu begleiten und Ihnen ein unvergleichliches Einkaufserlebnis zu bieten.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <app-footer></app-footer>

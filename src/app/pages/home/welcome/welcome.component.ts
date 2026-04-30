@@ -1,12 +1,11 @@
 import {Component, HostListener} from '@angular/core';
-import {Router} from "@angular/router";
-import {IntersectionObserverDirective} from "../../../directives/intersection-observer.directive";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-welcome',
   standalone: true,
   imports: [
-    IntersectionObserverDirective
+    RouterLink
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss'
@@ -18,12 +17,6 @@ export class WelcomeComponent {
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    const parallaxImg = document.querySelector('.parallax-img') as HTMLElement;
-    const scrollPosition = window.scrollY;
-    parallaxImg.style.transform = `translateY(${scrollPosition * 0.2}px)`;
-  }
-
-  navigatePage(page: string) {
-    this.router.navigate([page]);
+    // Parallax is handled globally in AppComponent
   }
 }

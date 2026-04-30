@@ -7,6 +7,7 @@ export type Car = {
   kraftstoffart: string;
   getriebe: string;
   email: string;
+  phone: string;
   bemerkungen?: string;
   preisvorstellung: number | null;
 }

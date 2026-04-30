@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Details, User} from "../../../model";
-import {MatIcon} from "@angular/material/icon";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FooterComponent} from "../../../components/footer/footer.component";
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
@@ -12,7 +11,6 @@ import {DataService} from "../../../services/data.service";
   selector: 'app-accept',
   standalone: true,
   imports: [
-    MatIcon,
     ReactiveFormsModule,
     FooterComponent,
     FormsModule,
@@ -21,7 +19,7 @@ import {DataService} from "../../../services/data.service";
   templateUrl: './accept.component.html',
   styleUrl: './accept.component.scss'
 })
-export class AcceptComponent implements OnInit {
+export class AcceptComponent implements OnInit, AfterViewInit {
   details?: Details;
   user: User = {
     fullName: undefined,
@@ -39,6 +37,11 @@ export class AcceptComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    // Trigger global reveal logic
+    window.dispatchEvent(new Event('scroll'));
+  }
+
   checkFieldsFilled() {
     // only swiss numbers allowed at the moment
     const isPhoneNumberValid = /^(0|(\+41\s?))((7[5-9])|(8[1-9]))\s?\d{3}\s?\d{2}\s?\d{2}$/.test(this.user.phone!);
@@ -51,6 +54,10 @@ export class AcceptComponent implements OnInit {
   }
 
   sendMail() {
+    if (!this.checkFieldsFilled()) {
+      return;
+    }
+
     let url = "https://formspree.io/f/mrgnrdpy";
 
     const httpOptions = {

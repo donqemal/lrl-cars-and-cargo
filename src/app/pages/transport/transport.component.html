@@ -1,71 +1,54 @@
-<div class="form-section">
-  <div class="container">
-    <div class="section-header animate-top" appIntersectionObserver>
-      <h2>Sicherer Transport Ihrer Fahrzeuge von A nach B!</h2>
-    </div>
+<section class="section dark">
+  <div class="hero-bg">
+    <div class="grid"></div>
+    <div class="glow two"></div>
+  </div>
 
-    <div class="card animate-bottom" appIntersectionObserver>
-      <form class="form-container">
-        <div class="form-grid">
-          <div class="form-column">
-            <div class="form-group">
-              <label for="fromAdress">Startort<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="fromAdress?.value">
-                <input
-                  id="fromAdress"
-                  type="text"
-                  placeholder="z.B. Zürich"
-                  #fromAdress
-                  (blur)="checkLocationFields()"
-                  required
-                />
-              </div>
-            </div>
-          </div>
+  <div class="section-head reveal">
+    <p class="eyebrow">Logistik / 01</p>
+    <h1 class="split-text">Sicherer Transport.</h1>
+    <p>Wir bringen Ihr Fahrzeug von A nach B — in der Schweiz.</p>
+  </div>
 
-          <div class="form-column">
-            <div class="form-group">
-              <label for="toAdress">Endort<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="toAdress?.value">
-                <input
-                  id="toAdress"
-                  type="text"
-                  placeholder="z.B. Genf"
-                  #toAdress
-                  (blur)="checkLocationFields()"
-                  required
-                />
-              </div>
-            </div>
-          </div>
+  <div class="form-container-premium reveal delay-1">
+    <form class="contact-form-premium">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Startort*</label>
+          <input id="fromAdress" type="text" placeholder="z.B. Zürich" #fromAdress required>
         </div>
+        <div class="form-group">
+          <label>Endort*</label>
+          <input id="toAdress" type="text" placeholder="z.B. Genf" #toAdress required>
+        </div>
+      </div>
 
-        @if (showFromAdress && showToAdress) {
-          <div class="info-container animate-bottom">
-            <div>
-              <h2>Von:</h2>{{ showFromAdress }}
-              <h2>Nach:</h2>{{ showToAdress }}
-            </div>
-            <div>
-              <h2>Distanz:</h2>{{ distance }}
-              <h2>Preis:</h2>~CHF{{ price }}
-            </div>
+      @if (showFromAdress && showToAdress) {
+        <div class="info-card">
+          <div class="info-row">
+            <span>Route</span>
+            <strong>{{ showFromAdress }} → {{ showToAdress }}</strong>
+          </div>
+          <div class="info-row">
+            <span>Distanz</span>
+            <strong>{{ distance }}</strong>
+          </div>
+          <div class="info-row highlight">
+            <span>Schätzung</span>
+            <strong>~CHF {{ price }}</strong>
           </div>
 
-          <div class="form-actions">
-            <button type="button" (click)="navigatePage()" class="submit-button">
-              <span class="button-content">
-                <mat-icon fontIcon="send"></mat-icon>
-                <span>Weiter zum Angebot</span>
-              </span>
+          <div class="form-footer">
+            <button class="btn magnetic" type="button" (click)="navigatePage()">
+              <span>Weiter zum Angebot</span>
             </button>
           </div>
-        }
+        </div>
+      }
 
-        <div id="map" class="map-container animate-bottom" appIntersectionObserver></div>
-      </form>
-    </div>
+      <div id="map" class="map-container reveal delay-2"></div>
+    </form>
   </div>
-</div>
+</section>
 
 <app-footer></app-footer>

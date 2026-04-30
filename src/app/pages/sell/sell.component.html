@@ -1,199 +1,142 @@
-<div class="head-container">
-  <img src="assets/handshake.png" alt="Hand Schütteln" height="667" width="1000">
-  <h1 class="animate-top" appIntersectionObserver>Ihr Auto schnell und einfach verkaufen!</h1>
-</div>
-
-<div class="form-section">
-  <div class="container">
-    <div class="section-header animate-bottom" appIntersectionObserver>
-      <h2>Angaben Fahrzeug & Person</h2>
-    </div>
-
-    <div class="card animate-bottom" appIntersectionObserver>
-      <form class="form-container">
-        <div class="form-grid">
-          <div class="form-column">
-            <div class="form-group">
-              <label for="marke">Marke<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="car.marke">
-                <input
-                  id="marke"
-                  [(ngModel)]="car.marke"
-                  [ngModelOptions]="{standalone: true}"
-                  placeholder="z.B. VW"
-                  type="text"
-                  required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="modell">Modell<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="car.modell">
-                <input
-                  id="modell"
-                  [(ngModel)]="car.modell"
-                  [ngModelOptions]="{standalone: true}"
-                  placeholder="z.B. Golf"
-                  type="text"
-                  required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="jahrgang">Jahrgang<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="car.jahrgang">
-                <input
-                  id="jahrgang"
-                  [(ngModel)]="car.jahrgang"
-                  [ngModelOptions]="{standalone: true}"
-                  placeholder="z.B. 2012"
-                  type="number"
-                  inputmode="numeric"
-                  required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="kilometerstand">Kilometerstand<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="car.kilometerstand">
-                <input
-                  id="kilometerstand"
-                  [(ngModel)]="car.kilometerstand"
-                  [ngModelOptions]="{standalone: true}"
-                  placeholder="z.B. 120000"
-                  type="number"
-                  inputmode="numeric"
-                  required>
-                <span class="input-suffix">km</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-column">
-            <div class="form-group">
-              <label for="zustand">Zustand<span class="required">*</span></label>
-              <div class="select-container">
-                <select
-                  id="zustand"
-                  [(ngModel)]="car.zustand"
-                  [ngModelOptions]="{standalone: true}"
-                  required>
-                  <option value="Sehr Gut">Sehr gut</option>
-                  <option value="Gut">Gut</option>
-                  <option value="Mittelmässig">Mittelmässig</option>
-                  <option value="Schlecht">Schlecht</option>
-                  <option value="Sehr Schlecht">Sehr schlecht</option>
-                </select>
-                <div class="select-arrow">
-                  <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="kraftstoffart">Kraftstoffart<span class="required">*</span></label>
-              <div class="select-container">
-                <select
-                  id="kraftstoffart"
-                  [(ngModel)]="car.kraftstoffart"
-                  [ngModelOptions]="{standalone: true}"
-                  required>
-                  <option value="Benzin">Benzin</option>
-                  <option value="Diesel">Diesel</option>
-                  <option value="Elektro">Elektro</option>
-                  <option value="Hybrid">Hybrid</option>
-                </select>
-                <div class="select-arrow">
-                  <mat-icon>keyboard_arrow_down</mat-icon>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="getriebe">Getriebe<span class="required">*</span></label>
-              <div class="select-container">
-                <select
-                  id="getriebe"
-                  [(ngModel)]="car.getriebe"
-                  [ngModelOptions]="{standalone: true}"
-                  required>
-                  <option value="Automatik">Automatik</option>
-                  <option value="Manuell">Manuell</option>
-                </select>
-                <div class="select-arrow">
-                  <mat-icon>keyboard_arrow_down</mat-icon>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="preisvorstellung">Preisvorstellung<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="car.preisvorstellung">
-                <span class="input-prefix">CHF</span>
-                <input
-                  id="preisvorstellung"
-                  [(ngModel)]="car.preisvorstellung"
-                  [ngModelOptions]="{standalone: true}"
-                  placeholder="z.B. 2000 - 4000"
-                  type="text"
-                  required>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="full-width-fields">
-          <div class="form-group">
-            <label for="email">E-Mail Adresse<span class="required">*</span></label>
-            <div class="input-container" [class.has-value]="car.email"
-                 [class.invalid]="emailInput?.invalid && emailInput?.touched">
-              <input
-                id="email"
-                [(ngModel)]="car.email"
-                #emailInput="ngModel"
-                [ngModelOptions]="{standalone: true}"
-                placeholder="z.B. max.muster@mail.com"
-                type="email"
-                email
-                required>
-            </div>
-
-            @if (emailInput?.invalid && emailInput?.touched) {
-              <div class="error-message">
-                Bitte geben Sie eine gültige E-Mail-Adresse ein
-              </div>
-            }
-          </div>
-
-          <div class="form-group">
-            <label for="bemerkungen">Bemerkungen</label>
-            <div class="input-container textarea-container" [class.has-value]="car.bemerkungen">
-              <textarea
-                id="bemerkungen"
-                [(ngModel)]="car.bemerkungen"
-                [ngModelOptions]="{standalone: true}"
-                placeholder="Zusätzliche Informationen zu Ihrem Fahrzeug (optional)"
-                class="remarks"></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <button
-            type="button"
-            [disabled]="!checkFieldsFilled()"
-            (click)="sendMail()"
-            class="submit-button">
-              <span class="button-content">
-              <mat-icon fontIcon="send"></mat-icon>
-              <span>Anfrage senden</span>
-            </span>
-          </button>
-          <p class="form-hint">Alle mit <span class="required">*</span> markierten Felder sind Pflichtfelder</p>
-        </div>
-      </form>
-    </div>
+<section class="section dark">
+  <div class="hero-bg">
+    <div class="grid"></div>
+    <div class="glow one"></div>
   </div>
-</div>
+
+  <div class="section-head reveal">
+    <p class="eyebrow">Fahrzeugverkauf / 01</p>
+    <h1 class="split-text">Schnell & einfach verkaufen.</h1>
+    <p>Geben Sie uns die Details zu Ihrem Fahrzeug und wir melden uns mit einem fairen Angebot.</p>
+  </div>
+
+  <div class="form-container-premium reveal delay-1">
+    <form class="contact-form-premium" (ngSubmit)="sendMail()" ngNativeValidate>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Marke*</label>
+          <input [(ngModel)]="car.marke" name="marke" #markeInput="ngModel" required placeholder="z.B. VW">
+          @if (markeInput?.invalid && markeInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Modell*</label>
+          <input [(ngModel)]="car.modell" name="modell" #modellInput="ngModel" required placeholder="z.B. Golf">
+          @if (modellInput?.invalid && modellInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Jahrgang*</label>
+          <input [(ngModel)]="car.jahrgang" name="jahrgang" #jahrgangInput="ngModel" type="number" required placeholder="z.B. 2012">
+          @if (jahrgangInput?.invalid && jahrgangInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Kilometerstand*</label>
+          <div class="input-with-suffix">
+            <input [(ngModel)]="car.kilometerstand" name="kilometerstand" #kmInput="ngModel" type="number" required placeholder="z.B. 120000">
+            <span>km</span>
+          </div>
+          @if (kmInput?.invalid && kmInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Zustand*</label>
+          <select [(ngModel)]="car.zustand" name="zustand" #zustandInput="ngModel" required>
+            <option value="Sehr Gut">Sehr gut</option>
+            <option value="Gut">Gut</option>
+            <option value="Mittelmässig">Mittelmässig</option>
+            <option value="Schlecht">Schlecht</option>
+          </select>
+          @if (zustandInput?.invalid && zustandInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Kraftstoffart*</label>
+          <select [(ngModel)]="car.kraftstoffart" name="kraftstoffart" #kraftstoffInput="ngModel" required>
+            <option value="Benzin">Benzin</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Elektro">Elektro</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+          @if (kraftstoffInput?.invalid && kraftstoffInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Getriebe*</label>
+          <select [(ngModel)]="car.getriebe" name="getriebe" #getriebeInput="ngModel" required>
+            <option value="Automatik">Automatik</option>
+            <option value="Manuell">Manuell</option>
+          </select>
+          @if (getriebeInput?.invalid && getriebeInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Preisvorstellung*</label>
+          <div class="input-with-prefix">
+            <span>CHF</span>
+            <input [(ngModel)]="car.preisvorstellung" name="preisvorstellung" #preisInput="ngModel" required placeholder="z.B. 25000">
+          </div>
+          @if (preisInput?.invalid && preisInput?.touched) {
+            <div class="error-message">
+              Dieses Feld ist erforderlich
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>E-Mail Adresse*</label>
+          <input [(ngModel)]="car.email" name="email" type="email" #emailInput="ngModel" required placeholder="max@beispiel.ch">
+          @if (emailInput?.invalid && emailInput?.touched) {
+            <div class="error-message">
+              Bitte geben Sie eine gültige E-Mail-Adresse ein
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label>Telefonnummer</label>
+          <input [(ngModel)]="car.phone" name="phone" type="tel" #phoneInput="ngModel" placeholder="+41 79 123 45 67"
+                 pattern="^(0|(\+41\s?))((7[5-9])|(8[1-9]))\s?\d{3}\s?\d{2}\s?\d{2}$">
+          @if (phoneInput?.invalid && phoneInput?.touched) {
+            <div class="error-message">
+              Bitte geben Sie eine gültige Telefonnummer ein (z.B. +41 79 123 45 67)
+            </div>
+          }
+        </div>
+        <div class="form-group full-width">
+          <label>Bemerkungen</label>
+          <textarea [(ngModel)]="car.bemerkungen" name="bemerkungen" rows="4" placeholder="Zusätzliche Infos..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <button class="btn magnetic" type="submit">
+          <span>Anfrage senden</span>
+        </button>
+        <p class="hint">* Pflichtfelder</p>
+      </div>
+    </form>
+  </div>
+</section>
 
 <app-footer></app-footer>

@@ -20,6 +20,8 @@ export class AboutUsComponent implements AfterViewInit {
       top: 0,
       left: 0,
     });
+    // Trigger global reveal logic
+    window.dispatchEvent(new Event('scroll'));
   }
 
   protected readonly window = window;

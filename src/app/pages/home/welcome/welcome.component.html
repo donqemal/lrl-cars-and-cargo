@@ -1,20 +1,32 @@
-<div class="welcome-container">
-  <div class="parallax">
-    <img class="parallax-img" src="assets/red-background.jpg" alt="Parallax Image">
+<section class="hero section dark">
+  <div class="hero-bg">
+    <div class="grid"></div>
+    <div class="glow one"></div>
+    <div class="glow two"></div>
   </div>
-  <div class="content">
-    <h1 class="hidden animate-top" appIntersectionObserver>Keine Bremsen für gute Deals!</h1>
-    <div class="hidden cars-container animate-bottom" appIntersectionObserver>
-      <button class="buy-car" (click)="navigatePage('/fahrzeuge')">Fahrzeuge
-      </button>
-      <button class="sell-car" (click)="navigatePage('/verkaufen')">Auto
-        Verkaufen
-      </button>
+  <div class="hero-content reveal">
+    <p class="eyebrow">Schweizer Automobil-Concierge / 01</p>
+    <h1 style="font-size: 8vw;"><span class="word">Traumfahrzeug.</span><br><span class="word">Präzise beschafft.</span></h1>
+    <p class="lead">LRL Cars verbindet hochwertige Fahrzeuge, saubere Abwicklung und persönliche Beratung — für Kunden,
+      die Klarheit statt Kompromisse suchen.</p>
+    <div class="actions">
+      <a class="btn magnetic" routerLink="/fahrzeuge"><span>Fahrzeuge ansehen</span></a>
+      <a class="btn ghost magnetic" routerLink="/" fragment="contact"><span>Suchauftrag</span></a>
     </div>
   </div>
-  <div class="arrow hidden" appIntersectionObserver>
-    <span></span>
-    <span></span>
-    <span></span>
+  <aside class="hero-panel reveal delay-2">
+    <div><strong>100+</strong><span>verkaufte Fahrzeuge</span></div>
+    <div><strong>CH</strong><span>Handel & Export</span></div>
+    <div><strong>24h</strong><span>schnelle Rückmeldung</span></div>
+  </aside>
+</section>
+
+<section id="intro" class="intro section light">
+  <div class="split reveal">
+    <p class="eyebrow">Vertrauen als Antrieb / 02</p>
+    <h2 class="split-text">Wir machen den Fahrzeugkauf einfach, transparent und hochwertig.</h2>
   </div>
-</div>
+  <div class="pill-grid reveal delay-1">
+    <span>Occasions</span><span>Import & Export</span><span>Leasing</span><span>Garantie möglich</span>
+  </div>
+</section>

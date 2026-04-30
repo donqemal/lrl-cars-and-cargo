@@ -1,113 +1,107 @@
-<div class="form-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>Angaben für Transportanfrage</h2>
-    </div>
-
-    <div class="card">
-      <form class="form-container">
-        <div class="info-container">
-            <div class="form-group">
-              <h2>Von:</h2>
-              <p>{{ details?.fromAddress }}</p>
-
-              <h2>Nach:</h2>
-              <p>{{ details?.toAddress }}</p>
-            </div>
-
-            <div class="form-group">
-              <h2>Distanz:</h2>
-              <p>{{ details?.distance }}</p>
-
-              <h2>Preis:</h2>
-              <p>~CHF {{ details?.price }}</p>
-            </div>
-        </div>
-
-        <hr class="form-separator" />
-
-        <div class="form-grid">
-          <div class="form-column">
-            <div class="form-group">
-              <label for="fullName">Vor- & Nachname<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="user.fullName">
-                <input
-                  id="fullName"
-                  [(ngModel)]="user.fullName"
-                  [ngModelOptions]="{ standalone: true }"
-                  type="text"
-                  placeholder="Max Muster"
-                  required />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-Mail<span class="required">*</span></label>
-              <div class="input-container"
-                   [class.has-value]="user.email"
-                   [class.invalid]="emailInput?.invalid && emailInput?.touched">
-                <input
-                  id="email"
-                  [(ngModel)]="user.email"
-                  #emailInput="ngModel"
-                  [ngModelOptions]="{ standalone: true }"
-                  type="email"
-                  placeholder="max.muster@mail.com"
-                  required
-                  email />
-              </div>
-
-              @if (emailInput?.invalid && emailInput?.touched) {
-                <div class="error-message">
-                  Bitte geben Sie eine gültige E-Mail-Adresse ein
-                </div>
-              }
-            </div>
-          </div>
-
-          <div class="form-column">
-            <div class="form-group">
-              <label for="phone">Telefonnummer<span class="required">*</span></label>
-              <div class="input-container" [class.has-value]="user.phone">
-                <input
-                  id="phone"
-                  [(ngModel)]="user.phone"
-                  [ngModelOptions]="{ standalone: true }"
-                  type="tel"
-                  placeholder="+41 79 123 45 67"
-                  required />
-              </div>
-            </div>
-
-            <div class="form-group textarea-container">
-              <label for="message">Bemerkungen</label>
-              <div class="input-container" [class.has-value]="user.message">
-                <textarea
-                  id="message"
-                  [(ngModel)]="user.message"
-                  [ngModelOptions]="{ standalone: true }"
-                  placeholder="Bemerkungen (optional)"
-                  class="remarks"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <button
-            type="button"
-            class="submit-button"
-            [disabled]="!checkFieldsFilled()"
-            (click)="sendMail()">
-            <span class="button-content">
-              <mat-icon fontIcon="send"></mat-icon>
-              <span>Senden</span>
-            </span>
-          </button>
-        </div>
-      </form>
-    </div>
+<section class="section dark">
+  <div class="hero-bg">
+    <div class="grid"></div>
+    <div class="glow one"></div>
   </div>
-</div>
+
+  <div class="section-head reveal">
+    <p class="eyebrow">Angebot / 02</p>
+    <h1 class="split-text">Transport Details.</h1>
+    <p>Bitte vervollständigen Sie Ihre Angaben, um die unverbindliche Anfrage für Ihre Route abzuschliessen.</p>
+  </div>
+
+  <div class="form-container-premium reveal delay-1">
+    <form class="contact-form-premium" ngNativeValidate (ngSubmit)="sendMail()">
+      <div class="info-card summary-card">
+        <div class="info-row">
+          <span>Route</span>
+          <strong>{{ details?.fromAddress }} → {{ details?.toAddress }}</strong>
+        </div>
+        <div class="info-grid">
+          <div class="info-row">
+            <span>Distanz</span>
+            <strong>{{ details?.distance }}</strong>
+          </div>
+          <div class="info-row highlight">
+            <span>Schätzung</span>
+            <strong>~CHF {{ details?.price }}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fullName">Vor- & Nachname*</label>
+          <input
+            id="fullName"
+            [(ngModel)]="user.fullName"
+            #nameInput="ngModel"
+            [ngModelOptions]="{ standalone: true }"
+            type="text"
+            placeholder="Max Muster"
+            required />
+          @if (nameInput?.invalid && nameInput?.touched) {
+            <div class="error-message">
+              Bitte geben Sie Ihren Vor- und Nachnamen ein
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-Mail*</label>
+          <input
+            id="email"
+            [(ngModel)]="user.email"
+            #emailInput="ngModel"
+            [ngModelOptions]="{ standalone: true }"
+            type="email"
+            placeholder="max.muster@mail.com"
+            required
+            email />
+          @if (emailInput?.invalid && emailInput?.touched) {
+            <div class="error-message">
+              Bitte geben Sie eine gültige E-Mail-Adresse ein
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefonnummer</label>
+          <input
+            id="phone"
+            [(ngModel)]="user.phone"
+            #phoneInput="ngModel"
+            [ngModelOptions]="{ standalone: true }"
+            type="tel"
+            placeholder="+41 79 123 45 67"
+            pattern="^(0|(\+41\s?))((7[5-9])|(8[1-9]))\s?\d{3}\s?\d{2}\s?\d{2}$" />
+          @if (phoneInput?.invalid && phoneInput?.touched) {
+            <div class="error-message">
+              Bitte geben Sie eine gültige Telefonnummer ein (z.B. +41 79 123 45 67)
+            </div>
+          }
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Bemerkungen</label>
+          <textarea
+            id="message"
+            [(ngModel)]="user.message"
+            [ngModelOptions]="{ standalone: true }"
+            placeholder="Gibt es Besonderheiten beim Fahrzeug oder Standort? (optional)"
+            rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <button
+          type="submit"
+          class="btn magnetic">
+          <span>Anfrage senden</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
 
 <app-footer></app-footer>

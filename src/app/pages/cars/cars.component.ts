@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {FooterComponent} from "../../components/footer/footer.component";
 import {EmbeddedContentComponent} from "../../components/embedded-content/embedded-content.component";
 import {IntersectionObserverDirective} from "../../directives/intersection-observer.directive";
@@ -16,5 +16,9 @@ import {IntersectionObserverDirective} from "../../directives/intersection-obser
   styleUrl: './cars.component.scss',
 })
 
-export class CarsComponent {
+export class CarsComponent implements AfterViewInit {
+  ngAfterViewInit() {
+    // Trigger global reveal logic
+    window.dispatchEvent(new Event('scroll'));
+  }
 }

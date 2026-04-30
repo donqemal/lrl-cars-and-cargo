@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {AfterViewInit, Component, OnInit, Renderer2} from '@angular/core';
 import {FooterComponent} from "../../components/footer/footer.component";
 import {SwipeImagesComponent} from "./swipe-images/swipe-images.component";
 import {BenefitsComponent} from "./benefits/benefits.component";
@@ -24,11 +24,16 @@ import {IntersectionObserverDirective} from "../../directives/intersection-obser
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.loadScript('https://app.reviewconnect.me/embed/5WQYwcO7MTFrnW0b0ypTQa4PLSL02AUZ/widget.js');
+  }
+
+  ngAfterViewInit(): void {
+    // Trigger global reveal logic
+    window.dispatchEvent(new Event('scroll'));
   }
 
   loadScript(src: string): void {

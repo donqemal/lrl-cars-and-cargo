@@ -1,56 +1,122 @@
 @import 'variables';
 @import 'mixins';
 
-.container {
-  max-width: 1200px;
-  margin: 90px auto 0 auto;
-  width: 100%;
+.section {
+  min-height: 100vh;
+  padding: 120px max(28px, calc((100vw - 1180px) / 2));
 }
 
-.section-header h2 {
-  font-family: 'Bebas Neue', serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: $text-dark;
-  text-align: center;
-  width: 90%;
-  margin: -10px auto auto;
+.form-container-premium {
+  width: min(1180px, 100% - 32px);
+  margin: 60px auto 0;
+}
 
-  @media (max-width: 768px) {
-    font-size: 2rem;
+.contact-form-premium {
+  display: grid;
+  gap: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 42px;
+  padding: 48px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
   }
-}
 
-.info-container {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
-  margin-top: 30px;
-  color: $text-dark;
-
-  div {
+  .form-group {
     display: flex;
     flex-direction: column;
-    font-size: 1rem;
-    max-width: 50%;
-  }
+    gap: 10px;
 
-  h2 {
-    font-size: 1.25rem;
-    margin-top: 15px;
-    margin-bottom: 0;
-  }
+    label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a8a8a2;
+      font-weight: 700;
+    }
 
-  @media (max-width: 768px) {
+    input {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0e0e0e;
+      color: #fff;
+      border-radius: 18px;
+      padding: 18px;
+      outline: none;
+      font-size: 16px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #e30613;
+      }
+    }
+  }
+}
+
+.info-card {
+  margin-top: 24px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(227, 6, 19, 0.05);
+  border: 1px solid rgba(227, 6, 19, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+
+    span {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #a8a8a2;
+    }
+
+    strong {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    &.highlight strong {
+      color: #e30613;
+      font-size: 24px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+  }
+
+  .form-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
   }
 }
 
 .map-container {
   width: 100%;
   height: 450px;
-  border-radius: 10px;
+  border-radius: 24px;
   margin-top: 40px;
-  background-color: $background-light;
-  box-shadow: $box-shadow;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .contact-form-premium {
+    padding: 32px 24px;
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
 }
