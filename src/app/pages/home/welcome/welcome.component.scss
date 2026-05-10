@@ -47,10 +47,16 @@
 .grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px);
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, .05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, .05) 1px, transparent 1px);
   background-size: 72px 72px;
-  mask-image: radial-gradient(circle at 60% 45%, #000, transparent 72%);
+  mask-image: radial-gradient(circle at 60% 45%, #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 60% 45%, #000 0%, transparent 70%);
   animation: gridDrift 16s linear infinite;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .glow {
@@ -59,7 +65,6 @@
   height: 36vw;
   background: radial-gradient(circle, rgba(227, 6, 19, .38), transparent 45%);
   filter: blur(20px);
-  animation: float 9s ease-in-out infinite;
 
   &.one {
     right: 8%;
@@ -158,14 +163,11 @@
 }
 
 @keyframes gridDrift {
-  to {
-    transform: translate3d(72px, 72px, 0)
+  from {
+    transform: translate3d(0, 0, 0);
   }
-}
-
-@keyframes float {
-  50% {
-    transform: translate3d(-5%, 6%, 0) scale(1.08)
+  to {
+    transform: translate3d(72px, 72px, 0);
   }
 }
 

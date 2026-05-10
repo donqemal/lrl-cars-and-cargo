@@ -70,10 +70,11 @@
   right: 0;
   white-space: nowrap;
   overflow: hidden;
-  color: transparent;
-  -webkit-text-stroke: 3px rgba(255, 255, 255, .26);
+  color: #050505;
+  -webkit-text-stroke: 8px rgb(255 255 255 / 0.34);
+  paint-order: stroke fill;
   font: 900 90px/1 Space Grotesk;
-  letter-spacing: -.06em;
+  letter-spacing: 5px;
 
   span {
     display: inline-block;
