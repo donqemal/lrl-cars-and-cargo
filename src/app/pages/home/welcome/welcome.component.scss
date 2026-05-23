@@ -81,7 +81,7 @@
 .hero-panel {
   position: absolute;
   right: max(28px, calc((100vw - 1180px) / 2));
-  top: 135px;
+  top: 400px;
   z-index: 3;
   width: 260px;
   border: 1px solid var(--line);
@@ -121,7 +121,7 @@
   align-items: center;
 
   h2 {
-    font-size: clamp(48px, 8vw, 116px);
+    font-size: clamp(48px, 6vw, 116px);
   }
 }
 
@@ -199,7 +199,10 @@
     bottom: 70px;
   }
   .split {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+  .order {
+    order: -1;
   }
   .pill-grid {
     grid-template-columns: 1fr 1fr;
